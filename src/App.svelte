@@ -47,39 +47,41 @@
 </script>
 
 <Router>
-	<div class="max-w-screen-lg mx-auto pt-16 pb-24 select-none {paddingX}">
-		<!-- include the UI elements -->
-		<Navbar />
-		<SettingsDrawer />
-		<InitialSetupModal />
-		<AudioModal />
-		<TajweedRulesModal />
-		<NotesModal />
-		<TokenModal />
-		<BottomNavbar />
-		<!-- <BottomAlert /> -->
+	<div class="bg-{window.websiteColors[1].websiteBackground} p-2">
+		<div class="max-w-screen-lg mx-auto pt-16 pb-24 select-none {paddingX}">
+			<!-- include the UI elements -->
+			<Navbar />
+			<SettingsDrawer />
+			<InitialSetupModal />
+			<AudioModal />
+			<TajweedRulesModal />
+			<NotesModal />
+			<TokenModal />
+			<BottomNavbar />
+			<!-- <BottomAlert /> -->
 
-		<!-- views will be rendered in this div -->
-		<div>
-			<Route path="/" component={Home} />
-			<Route path="/supplications" component={Supplications} />
-			<Route path="/bookmarks" component={Bookmarks} />
-			<Route path="/changelogs" component={Changelogs} />
-			<Route path="/issues" component={Issues} />
-			<Route path="/about" component={About} />
-			<Route path="/search" component={Search} />
+			<!-- views will be rendered in this div -->
+			<div>
+				<Route path="/" component={Home} />
+				<Route path="/supplications" component={Supplications} />
+				<Route path="/bookmarks" component={Bookmarks} />
+				<Route path="/changelogs" component={Changelogs} />
+				<Route path="/issues" component={Issues} />
+				<Route path="/about" component={About} />
+				<Route path="/search" component={Search} />
 
-			<Route path="/page/:page" let:params>
-				<Page page={params.page} />
-			</Route>
+				<Route path="/page/:page" let:params>
+					<Page page={params.page} />
+				</Route>
 
-			<Route path="/morphology/:key" let:params>
-				<Morphology key={params.key} />
-			</Route>
+				<Route path="/morphology/:key" let:params>
+					<Morphology key={params.key} />
+				</Route>
 
-			<Route path="/:chapter/*" let:params>
-				<Chapter chapter={params.chapter} />
-			</Route>
+				<Route path="/:chapter/*" let:params>
+					<Chapter chapter={params.chapter} />
+				</Route>
+			</div>
 		</div>
 	</div>
 </Router>

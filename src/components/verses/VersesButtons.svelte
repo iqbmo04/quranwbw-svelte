@@ -82,7 +82,7 @@
 
 		<div class="{verseDropdownVisible === true ? 'block' : 'hidden'} verse-dropdown absolute z-10 mt-2 min-w-max origin-top-right bg-{window.websiteColors[1].backgroundMain} divide-y divide-gray-{window.websiteColors[1].textMain} rounded-3xl shadow w-44 dark:bg-{window.websiteColors[1].buttonBackgroundHover}">
 			<div class="py-2 space-y-4">
-				<ul class=" text-sm text-{window.websiteColors[1].textMain} dark:text-{window.websiteColors[1].textMain}" aria-labelledby="dropdownDefaultButton">
+				<ul class=" text-sm text-{window.websiteColors[1].textLight}" aria-labelledby="dropdownDefaultButton">
 					<!-- play verse button -->
 					<li>
 						<button on:click={() => showAudioModal(key)} class="block px-4 py-2 w-full text-left hover:bg-{window.websiteColors[1].buttonBackgroundHover}">

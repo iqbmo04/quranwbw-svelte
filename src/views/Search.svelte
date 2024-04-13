@@ -58,8 +58,8 @@
 				id="dropdown"
 				bind:value={selectedTranslation}
 				on:change={(event) => (selectedTranslation = +event.target.value)}
-				class="truncate bg-{window.websiteColors[1].buttonBackgroundHoverColor} border bg-{window.websiteColors[1].hoverBorder} text-{window.websiteColors[1].textMain} text-sm rounded-3xl rounded-r-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:bg-{window.websiteColors[1]
-					.hoverBorder} dark:placeholder-gray-{window.websiteColors[1].textMain} dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+				class="truncate bg-{window.websiteColors[1].buttonBackgroundHoverColor} border bg-{window.websiteColors[1].hoverBorder} text-{window.websiteColors[1].textMain} text-sm rounded-3xl rounded-r-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:bg-{window.websiteColors[1].hoverBorder} dark:placeholder-gray-{window
+					.websiteColors[1].textMain} dark:focus:ring-blue-500 dark:focus:border-blue-500"
 			>
 				{#each Object.entries(searchableTranslations) as [id, translation]}
 					<option value={+id}>{translation.language.toUpperCase()} - {translation.name} ({translation.englishName})</option>
@@ -74,7 +74,7 @@
 					id="search-input"
 					value={searchText}
 					class="block p-2.5 w-full z-20 text-sm text-{window.websiteColors[1].textMain} bg-{window.websiteColors[1].buttonBackgroundHoverColor} border-s-gray-50 border-s-2 border bg-{window.websiteColors[1].hoverBorder} dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:border-s-gray-{window.websiteColors[1].textMain} dark:bg-{window.websiteColors[1]
-						.hoverBorder} dark:placeholder-gray-{window.websiteColors[1].textMain} dark:text-white dark:focus:border-blue-500"
+						.hoverBorder} dark:placeholder-gray-{window.websiteColors[1].textMain} dark:focus:border-blue-500"
 					placeholder="Search Abraham, Mary, Noah, Paradise..."
 					required
 				/>

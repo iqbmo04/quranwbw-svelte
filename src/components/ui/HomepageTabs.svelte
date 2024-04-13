@@ -15,7 +15,7 @@
 	// chapter cards, tab styles
 	const homepageTabsStyles = {
 		cardGridStyle: 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4',
-		cardInnerStyle: `flex items-center justify-between text-sm border bg-${window.websiteColors[1].backgroundMain} hover:bg-${window.websiteColors[1].buttonBackgroundHover} hover:border-${window.websiteColors[1].hoverBorder} rounded-3xl p-5 hover:cursor-pointer focus:outline-none focus:ring-4 focus:ring-gray-${window.websiteColors[1].textMain}`,
+		cardInnerStyle: `flex items-center justify-between text-sm border bg-${window.websiteColors[1].backgroundMain} hover:bg-${window.websiteColors[1].buttonBackgroundLight} hover:border-${window.websiteColors[1].hoverBorder} rounded-3xl p-5 hover:cursor-pointer focus:outline-none focus:ring-4 focus:ring-gray-${window.websiteColors[1].textMain}`,
 		tabStyle: `py-2 px-4 text-xs cursor-pointer rounded-3xl hover:bg-${window.websiteColors[1].buttonBackground}`,
 		activeTab: `bg-${window.websiteColors[1].buttonBackground}`
 	};

@@ -43,7 +43,7 @@ window.websiteColors = {
       homepage chapter's icons
       links (boldness will be applied inline)
     */
-		textLight: 'gray-400',
+		textLight: 'gray-500',
 
 		/*
       opacity for secondary texts

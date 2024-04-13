@@ -146,7 +146,7 @@
 					{#each { length: 114 } as _, chapter}
 						<li>
 							<button on:click={() => toggleModal('navigationDropdown', 'hide')} class="w-full text-left">
-								<Link to="/{chapter + 1}" class="block p-3 rounded-3xl hover:bg-{window.websiteColors[1].buttonBackground} {$__chapterNumber === chapter + 1 && `bg-${window.websiteColors[1].buttonBackground}`}">
+								<Link to="/{chapter + 1}" class="block p-3 rounded-3xl hover:bg-{window.websiteColors[1].buttonBackground} {$__chapterNumber === chapter + 1 && `bg-${window.websiteColors[1].buttonBackgroundLight}`}">
 									<span class="text-sm text-{window.websiteColors[1].textMain}">
 										{chapter + 1}. {quranMetaData[chapter + 1].transliteration}
 										<span class="hidden md:inline-block">({quranMetaData[chapter + 1].translation})</span>
