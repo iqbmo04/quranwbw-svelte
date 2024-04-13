@@ -106,7 +106,7 @@
 											<div class="flex items-center justify-center mb-2">
 												<p id="verb-1" class="text-xl md:text-2xl pb-4 leading-5 arabic-font-{$__wordType}">{value}</p>
 											</div>
-											<p class="text-xs text-{window.websiteColors[1].textMain}">{key}</p>
+											<p class="text-xs text-{window.websiteColors[1].textNormal}">{key}</p>
 										</div>
 									{/if}
 								{/each}

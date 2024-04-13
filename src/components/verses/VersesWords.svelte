@@ -69,7 +69,7 @@
 {#if $__currentPage != 'page' || ($__currentPage === 'page' && value.words.end_line === line)}
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<div class="{$__displayType === 1 ? 'text-center flex flex-col' : 'inline-flex flex-col'} {wordClasses}" on:click={() => wordClickHandler(chapter, verse)}>
-		<span class="{`arabicText leading-normal arabic-font-${$__wordType} ${$__currentPage !== 'page' && fontSizes.arabicText}`} {displayIsContinuous === true && `inline-block group-hover:text-${window.websiteColors[1].textMain}`}" data-fontSize={fontSizes.arabicText}>
+		<span class="{`arabicText leading-normal arabic-font-${$__wordType} ${$__currentPage !== 'page' && fontSizes.arabicText}`} {displayIsContinuous === true && `inline-block group-hover:text-${window.websiteColors[1].textNormal}`}" data-fontSize={fontSizes.arabicText}>
 			<!-- 1: Uthmanic Hafs Digital, 3: Indopak Madinah -->
 			{#if $__wordType === 1 || $__wordType === 3}
 				{value.words.end}

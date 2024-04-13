@@ -13,7 +13,7 @@
 
 	// classes
 	const rightMenuDropdownClasses = `block w-full text-left px-4 py-2 hover:bg-${window.websiteColors[1].primaryNormal}`;
-	const navigationInputClasses = `bg-${window.websiteColors[1].primaryNormal} text-${window.websiteColors[1].textMain} border border-${window.websiteColors[1].buttonBorder} text-sm rounded-3xl focus:ring-blue-500 focus:border-blue-500 block w-24 p-2.5`;
+	const navigationInputClasses = `bg-${window.websiteColors[1].primaryNormal} text-${window.websiteColors[1].textNormal} border border-${window.websiteColors[1].buttonBorder} text-sm rounded-3xl focus:ring-blue-500 focus:border-blue-500 block w-24 p-2.5`;
 
 	let gotoVerse = 1,
 		gotoPageChapter = 1,
@@ -138,7 +138,7 @@
 
 	<!-- navigation list -->
 	<div id="navigationDropdown" class="navbar-dropdown z-30 mt-1 border bg-{window.websiteColors[1].hoverBorder} rounded-3xl shadow-sm bg-{window.websiteColors[1].backgroundMain} border-y shadow-lg hidden dark:bg-slate-800 dark:text-slate-400">
-		<div class="flex flex-row space-x-4 justify-between max-h-80 max-w-screen-lg px-4 py-5 mx-auto text-{window.websiteColors[1].textMain} dark:text-slate-400 md:px-2">
+		<div class="flex flex-row space-x-4 justify-between max-h-80 max-w-screen-lg px-4 py-5 mx-auto text-{window.websiteColors[1].textNormal} dark:text-slate-400 md:px-2">
 			<!-- chapter selector -->
 			<div class="flex flex-col space-y-2">
 				<div class="mx-4 text-xs pb-2 border-b">Chapters</div>
@@ -147,7 +147,7 @@
 						<li>
 							<button on:click={() => toggleModal('navigationDropdown', 'hide')} class="w-full text-left">
 								<Link to="/{chapter + 1}" class="block p-3 rounded-3xl hover:bg-{window.websiteColors[1].primaryNormal} {$__chapterNumber === chapter + 1 && `bg-${window.websiteColors[1].primaryNormal}`}">
-									<span class="text-sm text-{window.websiteColors[1].textMain}">
+									<span class="text-sm text-{window.websiteColors[1].textNormal}">
 										{chapter + 1}. {quranMetaData[chapter + 1].transliteration}
 										<span class="hidden md:inline-block">({quranMetaData[chapter + 1].translation})</span>
 									</span>
@@ -188,8 +188,8 @@
 	</div>
 
 	<!-- Dropdown menu -->
-	<div id="rightMenuDropdown" class="navbar-dropdown z-30 hidden bg-{window.websiteColors[1].backgroundMain} divide-y divide-gray-{window.websiteColors[1].textMain} rounded-3xl shadow left-[-5%] w-44 dark:bg-slate-800">
-		<ul class="py-2 text-sm text-{window.websiteColors[1].textMain} dark:text-slate-400" aria-labelledby="rightMenuDropdownButton">
+	<div id="rightMenuDropdown" class="navbar-dropdown z-30 hidden bg-{window.websiteColors[1].backgroundMain} divide-y divide-gray-{window.websiteColors[1].textNormal} rounded-3xl shadow left-[-5%] w-44 dark:bg-slate-800">
+		<ul class="py-2 text-sm text-{window.websiteColors[1].textNormal} dark:text-slate-400" aria-labelledby="rightMenuDropdownButton">
 			<li class={$__currentPage === 'changelogs' || $__currentPage === 'issues' || $__currentPage === 'about' || $__currentPage === 'search' ? disabledElement : ''}>
 				<button id="settings-drawer-button" data-drawer-target="settings-drawer" data-drawer-show="settings-drawer" data-drawer-placement="right" aria-controls="settings-drawer" class={rightMenuDropdownClasses}>Settings</button>
 			</li>

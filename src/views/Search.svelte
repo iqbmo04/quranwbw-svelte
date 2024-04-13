@@ -53,13 +53,13 @@
 	</div>
 
 	<div class="flex max-w-2xl mx-auto">
-		<div id="dropdown" class="z-10 bg-{window.websiteColors[1].backgroundMain} divide-y divide-gray-{window.websiteColors[1].textMain} rounded-3xl shadow w-44 dark:bg-{window.websiteColors[1].websitePrimaryDarkColor}">
+		<div id="dropdown" class="z-10 bg-{window.websiteColors[1].backgroundMain} divide-y divide-gray-{window.websiteColors[1].textNormal} rounded-3xl shadow w-44 dark:bg-{window.websiteColors[1].websitePrimaryDarkColor}">
 			<select
 				id="dropdown"
 				bind:value={selectedTranslation}
 				on:change={(event) => (selectedTranslation = +event.target.value)}
-				class="truncate bg-{window.websiteColors[1].websitePrimaryDarkColor} border bg-{window.websiteColors[1].hoverBorder} text-{window.websiteColors[1].textMain} text-sm rounded-3xl rounded-r-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-{window.websiteColors[1].websitePrimaryDarkColor} dark:bg-{window.websiteColors[1].hoverBorder} dark:placeholder-gray-{window
-					.websiteColors[1].textMain} dark:focus:ring-blue-500 dark:focus:border-blue-500"
+				class="truncate bg-{window.websiteColors[1].websitePrimaryDarkColor} border bg-{window.websiteColors[1].hoverBorder} text-{window.websiteColors[1].textNormal} text-sm rounded-3xl rounded-r-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-{window.websiteColors[1].websitePrimaryDarkColor} dark:bg-{window.websiteColors[1].hoverBorder} dark:placeholder-gray-{window
+					.websiteColors[1].textNormal} dark:focus:ring-blue-500 dark:focus:border-blue-500"
 			>
 				{#each Object.entries(searchableTranslations) as [id, translation]}
 					<option value={+id}>{translation.language.toUpperCase()} - {translation.name} ({translation.englishName})</option>
@@ -73,8 +73,8 @@
 					type="search"
 					id="search-input"
 					value={searchText}
-					class="block p-2.5 w-full z-20 text-sm text-{window.websiteColors[1].textMain} bg-{window.websiteColors[1].websitePrimaryDarkColor} border-s-gray-50 border-s-2 border bg-{window.websiteColors[1].hoverBorder} dark:bg-{window.websiteColors[1].websitePrimaryDarkColor} dark:border-s-gray-{window.websiteColors[1].textMain} dark:bg-{window.websiteColors[1]
-						.hoverBorder} dark:placeholder-gray-{window.websiteColors[1].textMain} dark:focus:border-blue-500"
+					class="block p-2.5 w-full z-20 text-sm text-{window.websiteColors[1].textNormal} bg-{window.websiteColors[1].websitePrimaryDarkColor} border-s-gray-50 border-s-2 border bg-{window.websiteColors[1].hoverBorder} dark:bg-{window.websiteColors[1].websitePrimaryDarkColor} dark:border-s-gray-{window.websiteColors[1].textNormal} dark:bg-{window.websiteColors[1]
+						.hoverBorder} dark:placeholder-gray-{window.websiteColors[1].textNormal} dark:focus:border-blue-500"
 					placeholder="Search Abraham, Mary, Noah, Paradise..."
 					required
 				/>
@@ -113,7 +113,7 @@
 								<Link to="/{value.surah.number}/{value.numberInSurah}">
 									<div class="py-6 space-y-2 border-b dark:border-slate-700">
 										<div>{@html highlightSearchedText(value.text)}</div>
-										<div class="text-{window.websiteColors[1].textMain}">&mdash; {quranMetaData[value.surah.number].transliteration}, {value.surah.number}:{value.numberInSurah} ({value.edition.name})</div>
+										<div class="text-{window.websiteColors[1].textNormal}">&mdash; {quranMetaData[value.surah.number].transliteration}, {value.surah.number}:{value.numberInSurah} ({value.edition.name})</div>
 									</div>
 								</Link>
 							{/each}

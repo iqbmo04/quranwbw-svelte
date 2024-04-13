@@ -27,7 +27,7 @@
 	// update userBookmarks whenever the __userSettings changes
 	$: userBookmarks = JSON.parse($__userSettings).userBookmarks;
 
-	const buttonClasses = `inline-flex items-center justify-center w-10 h-10 text-${window.websiteColors[1].textMain} transition-colors duration-150 rounded-3xl focus:shadow-outline bg-${window.websiteColors[1].primaryNormal} hover:bg-${window.websiteColors[1].primaryDark} print:hidden`;
+	const buttonClasses = `inline-flex items-center justify-center w-10 h-10 text-${window.websiteColors[1].textNormal} transition-colors duration-150 rounded-3xl focus:shadow-outline bg-${window.websiteColors[1].primaryNormal} hover:bg-${window.websiteColors[1].primaryDark} print:hidden`;
 
 	let verseDropdownVisible = false;
 
@@ -62,7 +62,7 @@
 	}
 </script>
 
-<div class="verseButtons flex flex-row space-x-2 text-{window.websiteColors[1].textMain} text-xs">
+<div class="verseButtons flex flex-row space-x-2 text-{window.websiteColors[1].textNormal} text-xs">
 	<Link to={$__currentPage === 'chapter' ? './#' : `/${chapter}/${verse}`} class={buttonClasses} data-html2canvas-ignore>{key}</Link>
 
 	<!-- <button on:click={() => updateSettings({ type: 'userBookmarks', key })} class={buttonClasses}>
@@ -80,7 +80,7 @@
 			<DotsVertical />
 		</button>
 
-		<div class="{verseDropdownVisible === true ? 'block' : 'hidden'} verse-dropdown absolute z-10 mt-2 min-w-max origin-top-right bg-{window.websiteColors[1].backgroundMain} divide-y divide-gray-{window.websiteColors[1].textMain} rounded-3xl shadow w-44 dark:bg-{window.websiteColors[1].primaryDark}">
+		<div class="{verseDropdownVisible === true ? 'block' : 'hidden'} verse-dropdown absolute z-10 mt-2 min-w-max origin-top-right bg-{window.websiteColors[1].backgroundMain} divide-y divide-gray-{window.websiteColors[1].textNormal} rounded-3xl shadow w-44 dark:bg-{window.websiteColors[1].primaryDark}">
 			<div class="py-2 space-y-4">
 				<ul class=" text-sm text-{window.websiteColors[1].textLight}" aria-labelledby="dropdownDefaultButton">
 					<!-- play verse button -->

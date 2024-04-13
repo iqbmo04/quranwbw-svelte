@@ -28,8 +28,8 @@
 		<div class="relative space-y-6 sm:rounded-3xl theme-grayscale">
 			<h1 class="text-md md:text-2xl text-center opacity-70">{tableTitles[tableType].title} ({totalAvailableWords})</h1>
 			<div class="max-h-80 overflow-auto">
-				<table class="w-full text-sm text-left rtl:text-right text-{window.websiteColors[1].textMain} dark:text-{window.websiteColors[1].textMain}">
-					<thead class="text-xs text-{window.websiteColors[1].textMain} uppercase bg-{window.websiteColors[1].websitePrimaryDarkColor} dark:bg-{window.websiteColors[1].websitePrimaryDarkColor} dark:text-{window.websiteColors[1].textMain}">
+				<table class="w-full text-sm text-left rtl:text-right text-{window.websiteColors[1].textNormal} dark:text-{window.websiteColors[1].textNormal}">
+					<thead class="text-xs text-{window.websiteColors[1].textNormal} uppercase bg-{window.websiteColors[1].websitePrimaryDarkColor} dark:bg-{window.websiteColors[1].websitePrimaryDarkColor} dark:text-{window.websiteColors[1].textNormal}">
 						<tr>
 							<th scope="col" class="px-6 py-3"> # </th>
 							<th scope="col" class="px-6 py-3"> Word </th>
