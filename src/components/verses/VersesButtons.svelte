@@ -27,7 +27,7 @@
 	// update userBookmarks whenever the __userSettings changes
 	$: userBookmarks = JSON.parse($__userSettings).userBookmarks;
 
-	const buttonClasses = 'inline-flex items-center justify-center w-10 h-10 text-{window.websiteColors[1].textColorMain} transition-colors duration-150 rounded-3xl focus:shadow-outline bg-{window.websiteColors[1].buttonBackgroundColor} hover:bg-{window.websiteColors[1].hoverBackgroundColor} print:hidden dark:bg-slate-800 dark:hover:bg-slate-700';
+	const buttonClasses = `inline-flex items-center justify-center w-10 h-10 text-${window.websiteColors[1].textColorMain} transition-colors duration-150 rounded-3xl focus:shadow-outline bg-${window.websiteColors[1].buttonBackgroundColor} hover:bg-${window.websiteColors[1].hoverBackgroundColor} print:hidden`;
 
 	let verseDropdownVisible = false;
 
@@ -62,7 +62,7 @@
 	}
 </script>
 
-<div class="verseButtons flex flex-row space-x-2 text-{window.websiteColors[1].textColorMain} text-xs theme-grayscale">
+<div class="verseButtons flex flex-row space-x-2 text-{window.websiteColors[1].textColorMain} text-xs">
 	<Link to={$__currentPage === 'chapter' ? './#' : `/${chapter}/${verse}`} class={buttonClasses} data-html2canvas-ignore>{key}</Link>
 
 	<!-- <button on:click={() => updateSettings({ type: 'userBookmarks', key })} class={buttonClasses}>
