@@ -249,11 +249,11 @@
 <div id="token-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full text-sm p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full theme-grayscale">
 	<div class="relative w-full max-w-xl max-h-full">
 		<!-- Modal content -->
-		<div class="relative bg-{window.websiteColors[1].backgroundMain} rounded-3xl shadow daaark:bg-{window.websiteColors[1].buttonBackgroundHoverColor}">
+		<div class="relative bg-{window.websiteColors[1].backgroundMain} rounded-3xl shadow daaark:bg-{window.websiteColors[1].websitePrimaryDarkColor}">
 			<button
 				type="button"
 				on:click={() => toggleModal('token-modal', 'hide')}
-				class="absolute top-3 right-2.5 text-{window.websiteColors[1].textMain} bg-transparent hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor} hover:text-{window.websiteColors[1].textMain} rounded-3xl text-sm w-8 h-8 ml-auto inline-flex justify-center items-center daaark:hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor} daaark:hover:text-white"
+				class="absolute top-3 right-2.5 text-{window.websiteColors[1].textMain} bg-transparent hover:bg-{window.websiteColors[1].websitePrimaryNormalrkColor} hover:text-{window.websiteColors[1].textMain} rounded-3xl text-sm w-8 h-8 ml-auto inline-flex justify-center items-center daaark:hover:bg-{window.websiteColors[1].webwebsitePrimaryNormalolor} daaark:hover:text-white"
 				data-modal-hide="token-modal"
 			>
 				<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -374,7 +374,7 @@
 							</div>
 
 							<!-- delete token button -->
-							<button id="delete-token" on:click={() => deleteToken()} class="w-full bg-{window.websiteColors[1].buttonBackground} text-white hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor} {buttonElement}">
+							<button id="delete-token" on:click={() => deleteToken()} class="w-full bg-{window.websiteColors[1].primaryNormal} text-white hover:bg-{window.websiteColors[1].websitePrimaryNormalrkColor} {buttonElement}">
 								<span>Delete Token</span>
 							</button>
 						</div>

@@ -12,8 +12,8 @@
 	import ChevronDown from '$svgs/ChevronDown.svelte';
 
 	// classes
-	const rightMenuDropdownClasses = `block w-full text-left px-4 py-2 hover:bg-${window.websiteColors[1].buttonBackgroundLight}`;
-	const navigationInputClasses = `bg-${window.websiteColors[1].buttonBackgroundLight} text-${window.websiteColors[1].textMain} border border-${window.websiteColors[1].buttonBorder} text-sm rounded-3xl focus:ring-blue-500 focus:border-blue-500 block w-24 p-2.5`;
+	const rightMenuDropdownClasses = `block w-full text-left px-4 py-2 hover:bg-${window.websiteColors[1].primaryNormal}`;
+	const navigationInputClasses = `bg-${window.websiteColors[1].primaryNormal} text-${window.websiteColors[1].textMain} border border-${window.websiteColors[1].buttonBorder} text-sm rounded-3xl focus:ring-blue-500 focus:border-blue-500 block w-24 p-2.5`;
 
 	let gotoVerse = 1,
 		gotoPageChapter = 1,
@@ -76,19 +76,19 @@
 
 <nav id="navbar" class="{$__currentPage === 'home' ? 'hidden' : 'block'} bg-{window.websiteColors[1].backgroundMain} fixed w-full z-20 top-0 left-0 border-b text-black print:hidden">
 	<div id="top-nav" class="{$__topNavbarVisible === true ? 'block' : 'hidden'} flex flex-row items-center justify-between max-w-screen-lg mx-auto px-4 py-2">
-		<Link to="/" class="flex flex-row items-center p-3 cursor-pointer md:bg-transparent hover:bg-{window.websiteColors[1].buttonBackgroundLight} rounded-3xl">
+		<Link to="/" class="flex flex-row items-center p-3 cursor-pointer md:bg-transparent hover:bg-{window.websiteColors[1].primaryNormal} rounded-3xl">
 			<Home />
 			<span class="text-xs pl-2 hidden md:block">Home</span>
 		</Link>
 
 		<!-- display the chapter name on chapter page -->
-		<button id="navigationDropdownButton" data-dropdown-toggle="navigationDropdown" class="{$__currentPage === 'chapter' ? 'block' : 'hidden'} flex items-center p-3 text-sm w-auto p-2 hover:bg-{window.websiteColors[1].buttonBackgroundLight} rounded-3xl">
+		<button id="navigationDropdownButton" data-dropdown-toggle="navigationDropdown" class="{$__currentPage === 'chapter' ? 'block' : 'hidden'} flex items-center p-3 text-sm w-auto p-2 hover:bg-{window.websiteColors[1].primaryNormal} rounded-3xl">
 			{@html navbarChapterName}
 			<ChevronDown />
 		</button>
 
 		<!-- display only the page name for non-chapter page -->
-		<button class="{$__currentPage !== 'chapter' ? 'block' : 'hidden'} flex items-center p-3 text-sm w-auto p-2 hover:bg-{window.websiteColors[1].buttonBackgroundLight} rounded-3xl">
+		<button class="{$__currentPage !== 'chapter' ? 'block' : 'hidden'} flex items-center p-3 text-sm w-auto p-2 hover:bg-{window.websiteColors[1].primaryNormal} rounded-3xl">
 			{$__currentPage[0].toUpperCase() + $__currentPage.slice(1)}
 
 			<!-- if it's the mushaf page, show page number as well -->
@@ -102,7 +102,7 @@
 			{/if}
 		</button>
 
-		<div class="flex flex-row items-center p-3 cursor-pointer md:bg-transparent hover:bg-{window.websiteColors[1].buttonBackgroundLight} rounded-3xl dark:hover:bg-slate-700" type="button" id="rightMenuDropdownButton" data-dropdown-toggle="rightMenuDropdown">
+		<div class="flex flex-row items-center p-3 cursor-pointer md:bg-transparent hover:bg-{window.websiteColors[1].primaryNormal} rounded-3xl dark:hover:bg-slate-700" type="button" id="rightMenuDropdownButton" data-dropdown-toggle="rightMenuDropdown">
 			<span class="text-xs pr-2 hidden md:block">Menu</span>
 			<Menu />
 		</div>
@@ -125,7 +125,7 @@
 			</div>
 		</div>
 
-		<div id="chapter-progress-bar" class="fixed inset-x-0 z-20 h-1 bg-{window.websiteColors[1].buttonBackgroundHoverColor} transition-width transition-slowest ease dark:bg-slate-700" style="width: {chapterProgress}%" />
+		<div id="chapter-progress-bar" class="fixed inset-x-0 z-20 h-1 bg-{window.websiteColors[1].websitePrimaryDarkColor} transition-width transition-slowest ease dark:bg-slate-700" style="width: {chapterProgress}%" />
 	{/if}
 
 	<!-- mini nav for mushaf page -->
@@ -146,7 +146,7 @@
 					{#each { length: 114 } as _, chapter}
 						<li>
 							<button on:click={() => toggleModal('navigationDropdown', 'hide')} class="w-full text-left">
-								<Link to="/{chapter + 1}" class="block p-3 rounded-3xl hover:bg-{window.websiteColors[1].buttonBackground} {$__chapterNumber === chapter + 1 && `bg-${window.websiteColors[1].buttonBackgroundLight}`}">
+								<Link to="/{chapter + 1}" class="block p-3 rounded-3xl hover:bg-{window.websiteColors[1].primaryNormal} {$__chapterNumber === chapter + 1 && `bg-${window.websiteColors[1].primaryNormal}`}">
 									<span class="text-sm text-{window.websiteColors[1].textMain}">
 										{chapter + 1}. {quranMetaData[chapter + 1].transliteration}
 										<span class="hidden md:inline-block">({quranMetaData[chapter + 1].translation})</span>

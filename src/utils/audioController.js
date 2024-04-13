@@ -286,7 +286,7 @@ export function resetAudioSettings() {
 
 	// remove word highlight
 	document.querySelectorAll('.word').forEach((element) => {
-		element.classList.remove('bg-{window.websiteColors[1].buttonBackground}');
+		element.classList.remove('bg-{window.websiteColors[1].primaryNormal}');
 	});
 }
 
