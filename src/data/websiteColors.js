@@ -15,9 +15,7 @@ window.websiteColors = {
 		primary150: '[#ebebeb]',
 		primary200: 'gray-200',
 		primary400: 'gray-400',
-
-		// logo, tagline, homepage chapter's secondary details, homepage chapter's icons, links (boldness will be applied inline)
-		primary500: 'gray-500'
+		primary500: 'gray-500' // logo, tagline, homepage chapter's secondary details, homepage chapter's icons, links (boldness will be applied inline)
 	}
 };
 
