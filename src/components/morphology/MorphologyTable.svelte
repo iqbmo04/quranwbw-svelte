@@ -28,8 +28,8 @@
 		<div class="relative space-y-6 sm:rounded-3xl theme-grayscale">
 			<h1 class="text-md md:text-2xl text-center opacity-70">{tableTitles[tableType].title} ({totalAvailableWords})</h1>
 			<div class="max-h-80 overflow-auto">
-				<table class="w-full text-sm text-left rtl:text-right text-{window.websiteColors[1].textColorMain} dark:text-{window.websiteColors[1].textColorMain}">
-					<thead class="text-xs text-{window.websiteColors[1].textColorMain} uppercase bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:text-{window.websiteColors[1].textColorMain}">
+				<table class="w-full text-sm text-left rtl:text-right text-{window.websiteColors[1].textMain} dark:text-{window.websiteColors[1].textMain}">
+					<thead class="text-xs text-{window.websiteColors[1].textMain} uppercase bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:text-{window.websiteColors[1].textMain}">
 						<tr>
 							<th scope="col" class="px-6 py-3"> # </th>
 							<th scope="col" class="px-6 py-3"> Word </th>
@@ -41,7 +41,7 @@
 					</thead>
 					<tbody>
 						{#each Array.from(Array(lastWordToLoad + 1).keys()).slice(1) as word}
-							<tr class="bg-{window.websiteColors[1].backgroundColorMain} border-b dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:bg-{window.websiteColors[1].hoverBorderColor} hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor}">
+							<tr class="bg-{window.websiteColors[1].backgroundMain} border-b dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:bg-{window.websiteColors[1].hoverBorder} hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor}">
 								<td class="px-6 py-4"> {word} </td>
 								<td class="px-6 py-4 arabic-font-{$__wordType} text-xl md:text-2xl"> {wordData[word - 1].arabic} </td>
 								<td class="px-6 py-4"> {wordData[word - 1].translation} </td>

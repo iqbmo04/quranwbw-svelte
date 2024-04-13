@@ -27,7 +27,7 @@
 	// update userBookmarks whenever the __userSettings changes
 	$: userBookmarks = JSON.parse($__userSettings).userBookmarks;
 
-	const buttonClasses = `inline-flex items-center justify-center w-10 h-10 text-${window.websiteColors[1].textColorMain} transition-colors duration-150 rounded-3xl focus:shadow-outline bg-${window.websiteColors[1].buttonBackgroundColor} hover:bg-${window.websiteColors[1].buttonBackgroundHoverColor} print:hidden`;
+	const buttonClasses = `inline-flex items-center justify-center w-10 h-10 text-${window.websiteColors[1].textMain} transition-colors duration-150 rounded-3xl focus:shadow-outline bg-${window.websiteColors[1].buttonBackground} hover:bg-${window.websiteColors[1].buttonBackgroundHover} print:hidden`;
 
 	let verseDropdownVisible = false;
 
@@ -62,7 +62,7 @@
 	}
 </script>
 
-<div class="verseButtons flex flex-row space-x-2 text-{window.websiteColors[1].textColorMain} text-xs">
+<div class="verseButtons flex flex-row space-x-2 text-{window.websiteColors[1].textMain} text-xs">
 	<Link to={$__currentPage === 'chapter' ? './#' : `/${chapter}/${verse}`} class={buttonClasses} data-html2canvas-ignore>{key}</Link>
 
 	<!-- <button on:click={() => updateSettings({ type: 'userBookmarks', key })} class={buttonClasses}>
@@ -80,12 +80,12 @@
 			<DotsVertical />
 		</button>
 
-		<div class="{verseDropdownVisible === true ? 'block' : 'hidden'} verse-dropdown absolute z-10 mt-2 min-w-max origin-top-right bg-{window.websiteColors[1].backgroundColorMain} divide-y divide-gray-{window.websiteColors[1].textColorMain} rounded-3xl shadow w-44 dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor}">
+		<div class="{verseDropdownVisible === true ? 'block' : 'hidden'} verse-dropdown absolute z-10 mt-2 min-w-max origin-top-right bg-{window.websiteColors[1].backgroundMain} divide-y divide-gray-{window.websiteColors[1].textMain} rounded-3xl shadow w-44 dark:bg-{window.websiteColors[1].buttonBackgroundHover}">
 			<div class="py-2 space-y-4">
-				<ul class=" text-sm text-{window.websiteColors[1].textColorMain} dark:text-{window.websiteColors[1].textColorMain}" aria-labelledby="dropdownDefaultButton">
+				<ul class=" text-sm text-{window.websiteColors[1].textMain} dark:text-{window.websiteColors[1].textMain}" aria-labelledby="dropdownDefaultButton">
 					<!-- play verse button -->
 					<li>
-						<button on:click={() => showAudioModal(key)} class="block px-4 py-2 w-full text-left hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor}">
+						<button on:click={() => showAudioModal(key)} class="block px-4 py-2 w-full text-left hover:bg-{window.websiteColors[1].buttonBackgroundHover}">
 							<div class="flex flex-row items-center">
 								<svelte:component this={$__audioSettings.isPlaying === true && $__audioSettings.playingKey === key ? Pause : Play} />
 								<span class="text-xs pl-2">{$__audioSettings.isPlaying === true && $__audioSettings.playingKey === key ? 'Stop Playing' : 'Play Verse'}</span>
@@ -95,7 +95,7 @@
 
 					<!-- bookmark/unbookmark button -->
 					<li>
-						<button on:click={() => updateSettings({ type: 'userBookmarks', key })} class="block px-4 py-2 w-full text-left hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor}">
+						<button on:click={() => updateSettings({ type: 'userBookmarks', key })} class="block px-4 py-2 w-full text-left hover:bg-{window.websiteColors[1].buttonBackgroundHover}">
 							<div class="flex flex-row items-center">
 								<svelte:component this={userBookmarks.includes(key) ? Bookmarked : Bookmark} />
 								<span class="text-xs pl-2">{userBookmarks.includes(key) ? 'Remove Bookmark' : 'Bookmark Verse'}</span>
@@ -105,7 +105,7 @@
 
 					<!-- verse notes button -->
 					<li>
-						<button on:click={() => showNotesModal()} class="block px-4 py-2 w-full text-left hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor}">
+						<button on:click={() => showNotesModal()} class="block px-4 py-2 w-full text-left hover:bg-{window.websiteColors[1].buttonBackgroundHover}">
 							<div class="flex flex-row items-center">
 								<Notes />
 								<span class="text-xs pl-2">Verse Notes</span>
@@ -115,7 +115,7 @@
 
 					<!-- verse morphology button -->
 					<li>
-						<Link to="/morphology/{chapter}:{verse}" class="block px-4 py-2 w-full text-left hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor}">
+						<Link to="/morphology/{chapter}:{verse}" class="block px-4 py-2 w-full text-left hover:bg-{window.websiteColors[1].buttonBackgroundHover}">
 							<div class="flex flex-row items-center">
 								<Book />
 								<span class="text-xs pl-2">Verse Morphology</span>
@@ -125,7 +125,7 @@
 
 					<!-- share verse button -->
 					<li>
-						<button on:click={() => shareVerse()} class="block px-4 py-2 w-full text-left hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor}">
+						<button on:click={() => shareVerse()} class="block px-4 py-2 w-full text-left hover:bg-{window.websiteColors[1].buttonBackgroundHover}">
 							<div class="flex flex-row items-center">
 								<ShareOutline />
 								<span class="text-xs pl-2">Share Verse</span>
@@ -135,7 +135,7 @@
 
 					<!-- Verse screenshot button -->
 					<li>
-						<button on:click={() => downloadVerseImage(key)} class="block px-4 py-2 w-full text-left hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor}">
+						<button on:click={() => downloadVerseImage(key)} class="block px-4 py-2 w-full text-left hover:bg-{window.websiteColors[1].buttonBackgroundHover}">
 							<div class="flex flex-row items-center">
 								<Photo />
 								<span class="text-xs pl-2">Verse Screenshot</span>

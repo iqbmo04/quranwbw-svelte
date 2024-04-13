@@ -12,9 +12,9 @@
 {#if pageNumberKeys.includes(key)}
 	<div class="justify-center my-4 theme-grayscale">
 		<div class="flex items-center">
-			<div class="flex-1 border-t-2 bg-{window.websiteColors[1].hoverBorderColor}"></div>
+			<div class="flex-1 border-t-2 bg-{window.websiteColors[1].hoverBorder}"></div>
 			<span class="px-3">Page {value.meta.page}</span>
-			<div class="flex-1 border-t-2 bg-{window.websiteColors[1].hoverBorderColor}"></div>
+			<div class="flex-1 border-t-2 bg-{window.websiteColors[1].hoverBorder}"></div>
 		</div>
 	</div>
 {/if}

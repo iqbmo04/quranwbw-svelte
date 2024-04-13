@@ -61,11 +61,11 @@
 <div id="notes-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
 	<div class="relative w-full max-w-md max-h-full">
 		<!-- Modal content -->
-		<div class="relative bg-{window.websiteColors[1].backgroundColorMain} rounded-3xl shadow daaark:bg-{window.websiteColors[1].buttonBackgroundHoverColor}">
+		<div class="relative bg-{window.websiteColors[1].backgroundMain} rounded-3xl shadow daaark:bg-{window.websiteColors[1].buttonBackgroundHoverColor}">
 			<button
 				type="button"
 				on:click={() => toggleModal('notes-modal', 'hide')}
-				class="absolute top-3 right-2.5 text-{window.websiteColors[1].textColorMain} bg-transparent hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor} hover:text-{window.websiteColors[1].textColorMain} rounded-3xl text-sm w-8 h-8 ml-auto inline-flex justify-center items-center daaark:hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor} daaark:hover:text-white"
+				class="absolute top-3 right-2.5 text-{window.websiteColors[1].textMain} bg-transparent hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor} hover:text-{window.websiteColors[1].textMain} rounded-3xl text-sm w-8 h-8 ml-auto inline-flex justify-center items-center daaark:hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor} daaark:hover:text-white"
 				data-modal-hide="notes-modal"
 			>
 				<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -74,14 +74,14 @@
 				<span class="sr-only">Close modal</span>
 			</button>
 			<div class="px-6 py-6 space-y-8 lg:px-8">
-				<h3 id="notes-modal-title" class="mb-8 text-xl font-medium text-{window.websiteColors[1].textColorMain} daaark:text-white">{quranMetaData[chapter].transliteration}, {$__verseKey}</h3>
+				<h3 id="notes-modal-title" class="mb-8 text-xl font-medium text-{window.websiteColors[1].textMain} daaark:text-white">{quranMetaData[chapter].transliteration}, {$__verseKey}</h3>
 				<div class="">
 					<textarea
 						id="notes-value"
 						rows="8"
 						value={verseNote}
-						class="block p-2.5 w-full text-sm text-{window.websiteColors[1].textColorMain} bg-{window.websiteColors[1].buttonBackgroundHoverColor} rounded-3xl border bg-{window.websiteColors[1].hoverBorderColor} focus:ring-gray-{window.websiteColors[1].textColorMain} focus:border-blue-500 daaark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} daaark:bg-{window.websiteColors[1]
-							.hoverBorderColor} daaark:placeholder-gray-{window.websiteColors[1].textColorMain} gray-{window.websiteColors[1].textColorMain}ext-white daaark:focus:ring-gray-{window.websiteColors[1].textColorMain} daaark:focus:border-blue-500"
+						class="block p-2.5 w-full text-sm text-{window.websiteColors[1].textMain} bg-{window.websiteColors[1].buttonBackgroundHoverColor} rounded-3xl border bg-{window.websiteColors[1].hoverBorder} focus:ring-gray-{window.websiteColors[1].textMain} focus:border-blue-500 daaark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} daaark:bg-{window.websiteColors[1]
+							.hoverBorder} daaark:placeholder-gray-{window.websiteColors[1].textMain} gray-{window.websiteColors[1].textMain}ext-white daaark:focus:ring-gray-{window.websiteColors[1].textMain} daaark:focus:border-blue-500"
 						placeholder="Write your thoughts here..."
 					></textarea>
 				</div>
@@ -91,7 +91,7 @@
 				{/if}
 
 				<button id="notes-submit-button" on:click={() => updateNotesHandler()} class="w-full mr-2 mt-6 {buttonElement}">
-					<svg class="w-3 h-3 text-{window.websiteColors[1].textColorMain}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+					<svg class="w-3 h-3 text-{window.websiteColors[1].textMain}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
 						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17v1a.97.97 0 0 1-.933 1H1.933A.97.97 0 0 1 1 18V5.828a2 2 0 0 1 .586-1.414l2.828-2.828A2 2 0 0 1 5.828 1h8.239A.97.97 0 0 1 15 2M6 1v4a1 1 0 0 1-1 1H1m13.14.772 2.745 2.746M18.1 5.612a2.086 2.086 0 0 1 0 2.953l-6.65 6.646-3.693.739.739-3.692 6.646-6.646a2.087 2.087 0 0 1 2.958 0Z" />
 					</svg>
 					<span>Update Note</span>
