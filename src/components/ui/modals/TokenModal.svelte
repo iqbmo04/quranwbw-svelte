@@ -249,11 +249,11 @@
 <div id="token-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full text-sm p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full theme-grayscale">
 	<div class="relative w-full max-w-xl max-h-full">
 		<!-- Modal content -->
-		<div class="relative bg-{window.websiteColors[1].backgroundMain} rounded-3xl shadow daaark:bg-{window.websiteColors[1].websitePrimaryDarkColor}">
+		<div class="relative bg-{window.colors.backgroundMain} rounded-3xl shadow daaark:bg-{window.colors.primary200}">
 			<button
 				type="button"
 				on:click={() => toggleModal('token-modal', 'hide')}
-				class="absolute top-3 right-2.5 text-{window.websiteColors[1].textNormal} bg-transparent hover:bg-{window.websiteColors[1].websitePrimaryNormalrkColor} hover:text-{window.websiteColors[1].textNormal} rounded-3xl text-sm w-8 h-8 ml-auto inline-flex justify-center items-center daaark:hover:bg-{window.websiteColors[1].webwebsitePrimaryNormalolor} daaark:hover:text-white"
+				class="absolute top-3 right-2.5 text-{window.colors.textNormal} bg-transparent hover:bg-{window.colors.primary150} hover:text-{window.colors.textNormal} rounded-3xl text-sm w-8 h-8 ml-auto inline-flex justify-center items-center daaark:hover:bg-{window.colors.primary150} daaark:hover:text-white"
 				data-modal-hide="token-modal"
 			>
 				<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -262,7 +262,7 @@
 				<span class="sr-only">Close modal</span>
 			</button>
 			<div class="px-6 py-6 space-y-8 lg:px-8">
-				<h3 id="token-modal-title" class="mb-8 text-xl font-medium text-{window.websiteColors[1].textNormal} daaark:text-white">Token Login</h3>
+				<h3 id="token-modal-title" class="mb-8 text-xl font-medium text-{window.colors.textNormal} daaark:text-white">Token Login</h3>
 				<div id="token-info" class="flex flex-col space-y-4 text-sm">
 					<span>Token Login allows you to save your settings in the cloud without the need of creating an account or providing any personal details. This is done by assigning a unique token to your browser, and the same is used to sync your settings. If you do not opt for this, your settings will only be saved locally.</span>
 					<span>Once you generate a token, you can use it in a different browser to sync your settings from the cloud. Just make sure to save your token because there is no way to get it back if you lose access to it.</span>
@@ -374,7 +374,7 @@
 							</div>
 
 							<!-- delete token button -->
-							<button id="delete-token" on:click={() => deleteToken()} class="w-full bg-{window.websiteColors[1].primaryNormal} text-white hover:bg-{window.websiteColors[1].websitePrimaryNormalrkColor} {buttonElement}">
+							<button id="delete-token" on:click={() => deleteToken()} class="w-full bg-{window.colors.primary150} text-white hover:bg-{window.colors.primary150} {buttonElement}">
 								<span>Delete Token</span>
 							</button>
 						</div>

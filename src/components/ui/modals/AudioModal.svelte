@@ -16,11 +16,11 @@
 <div id="audio-modal" data-chapter data-verse tabindex="-1" aria-hidden="true" class="flex fixed bottom-0 left-0 right-0 z-50 hidden w-full overflow-x-hidden overflow-y-auto md:inset-0 theme-grayscale justify-center items-center">
 	<div class="relative w-full max-w-md max-h-full">
 		<!-- Modal content -->
-		<div class="relative bg-{window.websiteColors[1].backgroundMain} rounded-b-none md:rounded-b-3xl rounded-3xl shadow dark:bg-slate-800">
+		<div class="relative bg-{window.colors.backgroundMain} rounded-b-none md:rounded-b-3xl rounded-3xl shadow dark:bg-slate-800">
 			<button
 				type="button"
 				on:click={() => toggleModal('audio-modal', 'hide')}
-				class="absolute top-3 right-2.5 text-{window.websiteColors[1].textNormal} bg-transparent hover:bg-{window.websiteColors[1].primaryNormal} hover:text-{window.websiteColors[1].textNormal} rounded-3xl text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-{window.websiteColors[1].websitePrimaryDarkColor} dark:hover:text-white"
+				class="absolute top-3 right-2.5 text-{window.colors.textNormal} bg-transparent hover:bg-{window.colors.primary150} hover:text-{window.colors.textNormal} rounded-3xl text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-{window.colors.primary200} dark:hover:text-white"
 				data-modal-hide="audio-modal"
 			>
 				<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -29,11 +29,11 @@
 				<span class="sr-only">Close modal</span>
 			</button>
 			<div class="px-6 py-6 lg:px-8">
-				<h3 id="audio-modal-title" class="mb-4 text-xl font-medium text-{window.websiteColors[1].textNormal} dark:text-slate-400">{quranMetaData[$__audioSettings.playingChapter || 1].transliteration}, {$__audioSettings.playingKey}</h3>
+				<h3 id="audio-modal-title" class="mb-4 text-xl font-medium text-{window.colors.textNormal} dark:text-slate-400">{quranMetaData[$__audioSettings.playingChapter || 1].transliteration}, {$__audioSettings.playingKey}</h3>
 				<div class="flex flex-col">
 					<!-- verse or words -->
 					<div class="flex flex-col space-y-4 py-4">
-						<span class="text-xs text-{window.websiteColors[1].textNormal} dark:text-{window.websiteColors[1].textNormal}">Either play the whole verse or individual words.</span>
+						<span class="text-xs text-{window.colors.textNormal} dark:text-{window.colors.textNormal}">Either play the whole verse or individual words.</span>
 						<div class="flex flex-row space-x-4">
 							<!-- play verse -->
 							<div class="flex items-center">
@@ -44,10 +44,9 @@
 									value=""
 									on:click={updateAudioSettings}
 									name="radio-audio-type"
-									class="radio-play-type w-4 h-4 text-{window.websiteColors[1].textNormal} bg-{window.websiteColors[1].websitePrimaryNormalrkColor} bg-{window.websiteColors[1].hoverBorder} focus:ring-gray-{window.websiteColors[1].textNormal} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.websiteColors[1].textNormal} focus:ring-2 dark:bg-{window.websiteColors[1]
-										.websitePrimaryNormalrkColor} dark:border-slate-700"
+									class="radio-play-type w-4 h-4 text-{window.colors.textNormal} bg-{window.colors.primary150} bg-{window.colors.primary400} focus:ring-gray-{window.colors.textNormal} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.colors.textNormal} focus:ring-2 dark:bg-{window.colors.primary150} dark:border-slate-700"
 								/>
-								<label for="playVerse" class="ml-2 text-sm font-medium text-{window.websiteColors[1].textNormal} dark:text-{window.websiteColors[1].textNormal}">Play Verse</label>
+								<label for="playVerse" class="ml-2 text-sm font-medium text-{window.colors.textNormal} dark:text-{window.colors.textNormal}">Play Verse</label>
 							</div>
 							<!-- play word -->
 							<div class="flex items-center">
@@ -58,15 +57,14 @@
 									value=""
 									on:click={updateAudioSettings}
 									name="radio-audio-type"
-									class="radio-play-type w-4 h-4 text-{window.websiteColors[1].textNormal} bg-{window.websiteColors[1].websitePrimaryNormalrkColor} bg-{window.websiteColors[1].hoverBorder} focus:ring-gray-{window.websiteColors[1].textNormal} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.websiteColors[1].textNormal} focus:ring-2 dark:bg-{window.websiteColors[1]
-										.websitePrimaryNormalrkColor} dark:border-slate-700"
+									class="radio-play-type w-4 h-4 text-{window.colors.textNormal} bg-{window.colors.primary150} bg-{window.colors.primary400} focus:ring-gray-{window.colors.textNormal} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.colors.textNormal} focus:ring-2 dark:bg-{window.colors.primary150} dark:border-slate-700"
 								/>
-								<label for="playWord" class="ml-2 text-sm font-medium text-{window.websiteColors[1].textNormal} dark:text-{window.websiteColors[1].textNormal}">Play Words</label>
+								<label for="playWord" class="ml-2 text-sm font-medium text-{window.colors.textNormal} dark:text-{window.colors.textNormal}">Play Words</label>
 							</div>
 						</div>
 
 						{#if $__audioSettings.audioType === 'word'}
-							<span class="inline-flex items-center text-xs space-x-1 pt-2 text-{window.websiteColors[1].textNormal} dark:text-{window.websiteColors[1].textNormal} opacity-80">
+							<span class="inline-flex items-center text-xs space-x-1 pt-2 text-{window.colors.textNormal} dark:text-{window.colors.textNormal} opacity-80">
 								<!-- <Info /> -->
 								<span>This option would play all the words in the verse one by one with your selected repeat options. If you would like to listen to individual words, click on them.</span>
 							</span>
@@ -75,7 +73,7 @@
 
 					<!-- single or range -->
 					<div id="single-or-range-block" class="flex flex-col space-y-4 py-4 border-t dark:border-slate-700 {$__audioSettings.audioType === 'word' ? 'hidden' : ''}">
-						<span class="text-xs text-{window.websiteColors[1].textNormal} dark:text-{window.websiteColors[1].textNormal}">The playing range that you prefer.</span>
+						<span class="text-xs text-{window.colors.textNormal} dark:text-{window.colors.textNormal}">The playing range that you prefer.</span>
 						<div class="flex flex-row space-x-4">
 							<!-- play this verse -->
 							<div class="flex items-center">
@@ -86,10 +84,9 @@
 									value=""
 									on:click={updateAudioSettings}
 									name="audioRange-radios"
-									class=" w-4 h-4 text-{window.websiteColors[1].textNormal} bg-{window.websiteColors[1].websitePrimaryNormalrkColor} bg-{window.websiteColors[1].hoverBorder} focus:ring-gray-{window.websiteColors[1].textNormal} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.websiteColors[1].textNormal} focus:ring-2 dark:bg-{window.websiteColors[1]
-										.webwebsitePrimaryNormalolor} dark:border-slate-700"
+									class=" w-4 h-4 text-{window.colors.textNormal} bg-{window.colors.primary150} bg-{window.colors.primary400} focus:ring-gray-{window.colors.textNormal} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.colors.textNormal} focus:ring-2 dark:bg-{window.colors.primary150} dark:border-slate-700"
 								/>
-								<label for="playThisVerse" class="ml-2 text-sm font-medium text-{window.websiteColors[1].textNormal} dark:text-{window.websiteColors[1].textNormal}">This Verse</label>
+								<label for="playThisVerse" class="ml-2 text-sm font-medium text-{window.colors.textNormal} dark:text-{window.colors.textNormal}">This Verse</label>
 							</div>
 							<!-- play from here -->
 							<div class="flex items-center {$__currentPage !== 'chapter' && disabledElement}">
@@ -100,10 +97,9 @@
 									value=""
 									on:click={updateAudioSettings}
 									name="audioRange-radios"
-									class=" w-4 h-4 text-{window.websiteColors[1].textNormal} bg-{window.websiteColors[1].websitePrimaryNormalrkColor} bg-{window.websiteColors[1].hoverBorder} focus:ring-gray-{window.websiteColors[1].textNormal} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.websiteColors[1].textNormal} focus:ring-2 dark:bg-{window.websiteColors[1]
-										.webwebsitePrimaryNormalolor} dark:border-slate-700"
+									class=" w-4 h-4 text-{window.colors.textNormal} bg-{window.colors.primary150} bg-{window.colors.primary400} focus:ring-gray-{window.colors.textNormal} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.colors.textNormal} focus:ring-2 dark:bg-{window.colors.primary150} dark:border-slate-700"
 								/>
-								<label for="playFromHere" class="ml-2 text-sm font-medium text-{window.websiteColors[1].textNormal} dark:text-{window.websiteColors[1].textNormal}">From Here</label>
+								<label for="playFromHere" class="ml-2 text-sm font-medium text-{window.colors.textNormal} dark:text-{window.colors.textNormal}">From Here</label>
 							</div>
 							<!-- play range -->
 							<div class="flex items-center {$__currentPage !== 'chapter' && disabledElement}">
@@ -114,10 +110,9 @@
 									value=""
 									on:click={updateAudioSettings}
 									name="audioRange-radios"
-									class=" w-4 h-4 text-{window.websiteColors[1].textNormal} bg-{window.websiteColors[1].websitePrimaryNormalrkColor} bg-{window.websiteColors[1].hoverBorder} focus:ring-gray-{window.websiteColors[1].textNormal} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.websiteColors[1].textNormal} focus:ring-2 dark:bg-{window.websiteColors[1]
-										.webwebsitePrimaryNormalolor} dark:border-slate-700"
+									class=" w-4 h-4 text-{window.colors.textNormal} bg-{window.colors.primary150} bg-{window.colors.primary400} focus:ring-gray-{window.colors.textNormal} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.colors.textNormal} focus:ring-2 dark:bg-{window.colors.primary150} dark:border-slate-700"
 								/>
-								<label for="playRange" class="ml-2 text-sm font-medium text-{window.websiteColors[1].textNormal} dark:text-{window.websiteColors[1].textNormal}">Verses Range</label>
+								<label for="playRange" class="ml-2 text-sm font-medium text-{window.colors.textNormal} dark:text-{window.colors.textNormal}">Verses Range</label>
 							</div>
 						</div>
 					</div>
@@ -127,10 +122,10 @@
 						<div id="audio-range-options" class={$__audioSettings.audioRange === 'playRange' ? 'block' : 'hidden'}>
 							<!-- from / till -->
 							<div class="flex flex-col space-y-4 py-4 border-t dark:border-slate-700">
-								<!-- <span class="text-xs text-{window.websiteColors[1].textNormal} dark:text-{window.websiteColors[1].textNormal}">Select the range of verses or words to be played.</span> -->
+								<!-- <span class="text-xs text-{window.colors.textNormal} dark:text-{window.colors.textNormal}">Select the range of verses or words to be played.</span> -->
 								<div class="flex flex-row space-x-4">
 									<div class="flex flex-row space-x-2">
-										<span class="m-auto text-sm font-medium text-{window.websiteColors[1].textNormal} dark:text-{window.websiteColors[1].textNormal}">Start Verse</span>
+										<span class="m-auto text-sm font-medium text-{window.colors.textNormal} dark:text-{window.colors.textNormal}">Start Verse</span>
 										<input
 											type="number"
 											min="1"
@@ -139,13 +134,13 @@
 											id="startVerse"
 											on:change={updateAudioSettings}
 											aria-describedby="helper-text-explanation"
-											class="w-16 text-xs border bg-{window.websiteColors[1].hoverBorder} text-{window.websiteColors[1].textNormal} rounded-3xl focus:ring-gray-{window.websiteColors[1].textNormal} focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].websitePrimaryNormalrkColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1].textNormal} gray-{window
-												.websiteColors[1].textNormal}t-slate-400 dark:focus:ring-gray-{window.websiteColors[1].textNormal} dark:focus:border-blue-500"
+											class="w-16 text-xs border bg-{window.colors.primary400} text-{window.colors.textNormal} rounded-3xl focus:ring-gray-{window.colors.textNormal} focus:border-blue-500 block p-2.5 dark:bg-{window.colors.primary150} dark:border-slate-700 dark:placeholder-gray-{window.colors.textNormal} gray-{window.websiteColors[1].textNormal}t-slate-400 dark:focus:ring-gray-{window.colors
+												.textNormal} dark:focus:border-blue-500"
 											placeholder="start"
 										/>
 									</div>
 									<div class="flex flex-row space-x-2">
-										<span class="m-auto text-sm font-medium text-{window.websiteColors[1].textNormal} dark:text-{window.websiteColors[1].textNormal}">End Verse</span>
+										<span class="m-auto text-sm font-medium text-{window.colors.textNormal} dark:text-{window.colors.textNormal}">End Verse</span>
 										<input
 											type="number"
 											min={$__audioSettings.startVerse}
@@ -154,8 +149,8 @@
 											id="endVerse"
 											on:change={updateAudioSettings}
 											aria-describedby="helper-text-explanation"
-											class="w-16 text-xs border bg-{window.websiteColors[1].hoverBorder} text-{window.websiteColors[1].textNormal} rounded-3xl focus:ring-gray-{window.websiteColors[1].textNormal} focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].websitePrimaryNormalrkColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1].textNormal} gray-{window
-												.websiteColors[1].textNormal}t-slate-400 dark:focus:ring-gray-{window.websiteColors[1].textNormal} dark:focus:border-blue-500"
+											class="w-16 text-xs border bg-{window.colors.primary400} text-{window.colors.textNormal} rounded-3xl focus:ring-gray-{window.colors.textNormal} focus:border-blue-500 block p-2.5 dark:bg-{window.colors.primary150} dark:border-slate-700 dark:placeholder-gray-{window.colors.textNormal} gray-{window.websiteColors[1].textNormal}t-slate-400 dark:focus:ring-gray-{window.colors
+												.textNormal} dark:focus:border-blue-500"
 											placeholder="end"
 										/>
 									</div>
@@ -167,10 +162,10 @@
 
 				<!-- repeat times -->
 				<div class="flex flex-col space-y-4 py-4 border-t dark:border-slate-700">
-					<span class="text-xs text-{window.websiteColors[1].textNormal} dark:text-{window.websiteColors[1].textNormal}">Number of times a verse or word has to be repeated.</span>
+					<span class="text-xs text-{window.colors.textNormal} dark:text-{window.colors.textNormal}">Number of times a verse or word has to be repeated.</span>
 					<div class="flex flex-row space-x-4">
 						<div class="flex flex-row space-x-2">
-							<span class="m-auto text-sm font-medium text-{window.websiteColors[1].textNormal} dark:text-{window.websiteColors[1].textNormal}">Repeat each {$__audioSettings.audioType} </span>
+							<span class="m-auto text-sm font-medium text-{window.colors.textNormal} dark:text-{window.colors.textNormal}">Repeat each {$__audioSettings.audioType} </span>
 							<input
 								id="timesToRepeat"
 								type="number"
@@ -178,10 +173,10 @@
 								min="1"
 								max="20"
 								on:change={updateAudioSettings}
-								class="w-16 text-xs border bg-{window.websiteColors[1].hoverBorder} text-{window.websiteColors[1].textNormal} rounded-3xl focus:ring-gray-{window.websiteColors[1].textNormal} focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].websitePrimaryNormalrkColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1].textNormal} gray-{window.websiteColors[1]
-									.textNormal}t-slate-400 dark:focus:ring-gray-{window.websiteColors[1].textNormal} dark:focus:border-blue-500"
+								class="w-16 text-xs border bg-{window.colors.primary400} text-{window.colors.textNormal} rounded-3xl focus:ring-gray-{window.colors.textNormal} focus:border-blue-500 block p-2.5 dark:bg-{window.colors.primary150} dark:border-slate-700 dark:placeholder-gray-{window.colors.textNormal} gray-{window.websiteColors[1].textNormal}t-slate-400 dark:focus:ring-gray-{window.colors
+									.textNormal} dark:focus:border-blue-500"
 							/>
-							<span class="m-auto text-sm font-medium text-{window.websiteColors[1].textNormal} dark:text-{window.websiteColors[1].textNormal}">{$__audioSettings.timesToRepeat < 2 ? 'time' : 'times'} </span>
+							<span class="m-auto text-sm font-medium text-{window.colors.textNormal} dark:text-{window.colors.textNormal}">{$__audioSettings.timesToRepeat < 2 ? 'time' : 'times'} </span>
 						</div>
 					</div>
 				</div>

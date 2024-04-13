@@ -28,8 +28,8 @@
 		<div class="relative space-y-6 sm:rounded-3xl theme-grayscale">
 			<h1 class="text-md md:text-2xl text-center opacity-70">{tableTitles[tableType].title} ({totalAvailableWords})</h1>
 			<div class="max-h-80 overflow-auto">
-				<table class="w-full text-sm text-left rtl:text-right text-{window.websiteColors[1].textNormal} dark:text-{window.websiteColors[1].textNormal}">
-					<thead class="text-xs text-{window.websiteColors[1].textNormal} uppercase bg-{window.websiteColors[1].websitePrimaryDarkColor} dark:bg-{window.websiteColors[1].websitePrimaryDarkColor} dark:text-{window.websiteColors[1].textNormal}">
+				<table class="w-full text-sm text-left rtl:text-right text-{window.colors.textNormal} dark:text-{window.colors.textNormal}">
+					<thead class="text-xs text-{window.colors.textNormal} uppercase bg-{window.colors.primary200} dark:bg-{window.colors.primary200} dark:text-{window.colors.textNormal}">
 						<tr>
 							<th scope="col" class="px-6 py-3"> # </th>
 							<th scope="col" class="px-6 py-3"> Word </th>
@@ -41,7 +41,7 @@
 					</thead>
 					<tbody>
 						{#each Array.from(Array(lastWordToLoad + 1).keys()).slice(1) as word}
-							<tr class="bg-{window.websiteColors[1].backgroundMain} border-b dark:bg-{window.websiteColors[1].websitePrimaryNormalrkColor} dark:bg-{window.websiteColors[1].hoverBorder} hover:bg-{window.websiteColors[1].webwebsitePrimaryNormalolor} dark:hover:bg-{window.websiteColors[1].websitwebsitePrimaryNormalr}">
+							<tr class="bg-{window.colors.backgroundMain} border-b dark:bg-{window.colors.primary150} dark:bg-{window.colors.primary400} hover:bg-{window.colors.primary150} dark:hover:bg-{window.colors.primary150}">
 								<td class="px-6 py-4"> {word} </td>
 								<td class="px-6 py-4 arabic-font-{$__wordType} text-xl md:text-2xl"> {wordData[word - 1].arabic} </td>
 								<td class="px-6 py-4"> {wordData[word - 1].translation} </td>

@@ -7,7 +7,7 @@
 
 	import HomepageTabs from '$ui/HomepageTabs.svelte';
 
-	const linkStyles = `py-2 px-2 text-xs cursor-pointer focus:outline-none focus:ring-4 focus:ring-gray-${window.websiteColors[1].textNormal} rounded-3xl hover:bg-${window.websiteColors[1].primaryNormal}`;
+	const linkStyles = `py-2 px-2 text-xs cursor-pointer focus:outline-none focus:ring-4 focus:ring-gray-${window.colors.textNormal} rounded-3xl hover:bg-${window.colors.primary150}`;
 
 	__currentPage.set('home');
 </script>
@@ -16,13 +16,13 @@
 
 <div class="max-w-4xl mx-auto flex flex-col space-y-8 md:px-4">
 	<div class="flex flex-col mt-4">
-		<Link to="/" class="flex justify-center text-{window.websiteColors[1].textLight}">
+		<Link to="/" class="flex justify-center text-{window.colors.primary500}">
 			<Logo width="52" />
 		</Link>
-		<div class="text-xs text-center text-{window.websiteColors[1].textLight}">{websiteTagline}</div>
+		<div class="text-xs text-center text-{window.colors.primary500}">{websiteTagline}</div>
 	</div>
 
-	<div class="flex flex-wrap flex-col md:flex-col mt-12 justify-center text-xs font-bold text-{window.websiteColors[1].textLight} space-y-4">
+	<div class="flex flex-wrap flex-col md:flex-col mt-12 justify-center text-xs font-bold text-{window.colors.primary500} space-y-4">
 		<!-- last read link -->
 		<!-- <div id="last-read-block" class="flex justify-center items-center block">
       <Link to="/{$__lastRead.split(':')[0]}/{$__lastRead.split(':')[1]}" id="last-read-link" class={linkStyles}>Last Read ({$__lastRead})</Link>

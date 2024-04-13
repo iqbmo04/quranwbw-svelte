@@ -15,16 +15,16 @@
 	// chapter cards, tab styles
 	const homepageTabsStyles = {
 		cardGridStyle: 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4',
-		cardInnerStyle: `flex items-center justify-between text-sm border bg-${window.websiteColors[1].backgroundMain} hover:bg-${window.websiteColors[1].primaryNormal} hover:border-${window.websiteColors[1].hoverBorder} rounded-3xl p-5 hover:cursor-pointer focus:outline-none focus:ring-4 focus:ring-gray-${window.websiteColors[1].textNormal}`,
-		tabStyle: `py-2 px-4 text-xs cursor-pointer rounded-3xl hover:bg-${window.websiteColors[1].primaryNormal}`,
-		activeTab: `bg-${window.websiteColors[1].primaryNormal}`
+		cardInnerStyle: `flex items-center justify-between text-sm border bg-${window.colors.backgroundMain} hover:bg-${window.colors.primary150} hover:border-${window.colors.primary400} rounded-3xl p-5 hover:cursor-pointer focus:outline-none focus:ring-4 focus:ring-gray-${window.colors.textNormal}`,
+		tabStyle: `py-2 px-4 text-xs cursor-pointer rounded-3xl hover:bg-${window.colors.primary150}`,
+		activeTab: `bg-${window.colors.primary150}`
 	};
 
 	let activeTab = 1; // chapters tab
 </script>
 
 <div id="homepage-tabs" class="pt-0">
-	<div class="mb-4 text-{window.websiteColors[1].textLight} dark:bg-{window.websiteColors[1].hoverBorder}">
+	<div class="mb-4 text-{window.colors.primary500} dark:bg-{window.colors.primary400}">
 		<ul class="flex flex-wrap text-sm font-medium text-center justify-center space-x-2 md:space-x-4">
 			<li>
 				<button on:click={() => (activeTab = 1)} class="{homepageTabsStyles.tabStyle} {activeTab === 1 ? `${homepageTabsStyles.activeTab}` : ''}" id="chapters-tab" data-tabs-target="#chapters-tab-panel" type="button" role="tab" aria-controls="chapters-tab-panel" aria-selected="false">Chapters</button>
@@ -46,12 +46,12 @@
 					<Link to="/{chapter + 1}" class={homepageTabsStyles.cardInnerStyle}>
 						<div class="" use:inview={fetchOptions} on:inview_enter={(event) => fetchChapterData(+chapter + 1)}>
 							<span class="text-sm">{chapter + 1}. {quranMetaData[chapter + 1].transliteration}</span>
-							<div class="block text-xs text-{window.websiteColors[1].textLight}">
+							<div class="block text-xs text-{window.colors.primary500}">
 								{quranMetaData[chapter + 1].translation} <br />
 								{quranMetaData[chapter + 1].verses} Verses &bull; {quranMetaData[chapter + 1].revelation === 1 ? 'Meccan' : 'Medinan'}
 							</div>
 						</div>
-						<div class="chapter-icons justify-items-end text-{window.websiteColors[1].textLight} text-3xl mt-2">{@html `&#xE9${quranMetaData[chapter + 1].icon};`}</div>
+						<div class="chapter-icons justify-items-end text-{window.colors.primary500} text-3xl mt-2">{@html `&#xE9${quranMetaData[chapter + 1].icon};`}</div>
 					</Link>
 				{/each}
 			</div>
@@ -78,7 +78,7 @@
 						<Link to={item.url} class={homepageTabsStyles.cardInnerStyle}>
 							<div class="">
 								<span class="text-sm">{quranMetaData[item.chapter].transliteration} ({item.verses})</span>
-								<div class="block text-xs text-{window.websiteColors[1].textNormal}">{item.title}</div>
+								<div class="block text-xs text-{window.colors.textNormal}">{item.title}</div>
 							</div>
 						</Link>
 					{/each}

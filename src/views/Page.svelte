@@ -161,9 +161,9 @@
 			<!-- page number -->
 			<div class="max-w-3xl mx-auto justify-center text-sm">
 				<div class="flex items-center">
-					<div class="flex-1 border-t-2 bg-{window.websiteColors[1].hoverBorder}"></div>
+					<div class="flex-1 border-t-2 bg-{window.colors.primary400}"></div>
 					<span class="px-3">{page}</span>
-					<div class="flex-1 border-t-2 bg-{window.websiteColors[1].hoverBorder}"></div>
+					<div class="flex-1 border-t-2 bg-{window.colors.primary400}"></div>
 				</div>
 			</div>
 		</div>

@@ -53,13 +53,12 @@
 	</div>
 
 	<div class="flex max-w-2xl mx-auto">
-		<div id="dropdown" class="z-10 bg-{window.websiteColors[1].backgroundMain} divide-y divide-gray-{window.websiteColors[1].textNormal} rounded-3xl shadow w-44 dark:bg-{window.websiteColors[1].websitePrimaryDarkColor}">
+		<div id="dropdown" class="z-10 bg-{window.colors.backgroundMain} divide-y divide-gray-{window.colors.textNormal} rounded-3xl shadow w-44 dark:bg-{window.colors.primary200}">
 			<select
 				id="dropdown"
 				bind:value={selectedTranslation}
 				on:change={(event) => (selectedTranslation = +event.target.value)}
-				class="truncate bg-{window.websiteColors[1].websitePrimaryDarkColor} border bg-{window.websiteColors[1].hoverBorder} text-{window.websiteColors[1].textNormal} text-sm rounded-3xl rounded-r-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-{window.websiteColors[1].websitePrimaryDarkColor} dark:bg-{window.websiteColors[1].hoverBorder} dark:placeholder-gray-{window
-					.websiteColors[1].textNormal} dark:focus:ring-blue-500 dark:focus:border-blue-500"
+				class="truncate bg-{window.colors.primary200} border bg-{window.colors.primary400} text-{window.colors.textNormal} text-sm rounded-3xl rounded-r-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-{window.colors.primary200} dark:bg-{window.colors.primary400} dark:placeholder-gray-{window.websiteColors[1].textNormal} dark:focus:ring-blue-500 dark:focus:border-blue-500"
 			>
 				{#each Object.entries(searchableTranslations) as [id, translation]}
 					<option value={+id}>{translation.language.toUpperCase()} - {translation.name} ({translation.englishName})</option>
@@ -73,13 +72,12 @@
 					type="search"
 					id="search-input"
 					value={searchText}
-					class="block p-2.5 w-full z-20 text-sm text-{window.websiteColors[1].textNormal} bg-{window.websiteColors[1].websitePrimaryDarkColor} border-s-gray-50 border-s-2 border bg-{window.websiteColors[1].hoverBorder} dark:bg-{window.websiteColors[1].websitePrimaryDarkColor} dark:border-s-gray-{window.websiteColors[1].textNormal} dark:bg-{window.websiteColors[1]
-						.hoverBorder} dark:placeholder-gray-{window.websiteColors[1].textNormal} dark:focus:border-blue-500"
+					class="block p-2.5 w-full z-20 text-sm text-{window.colors.textNormal} bg-{window.colors.primary200} border-s-gray-50 border-s-2 border bg-{window.colors.primary400} dark:bg-{window.colors.primary200} dark:border-s-gray-{window.colors.textNormal} dark:bg-{window.colors.primary400} dark:placeholder-gray-{window.websiteColors[1].textNormal} dark:focus:border-blue-500"
 					placeholder="Search Abraham, Mary, Noah, Paradise..."
 					required
 				/>
 			</div>
-			<button on:click={(event) => (searchText = document.getElementById('search-input').value)} class="p-2.5 text-sm font-medium text-white bg-{window.websiteColors[1].websitePrimaryDarkColor} rounded-r-3xl border bg-{window.websiteColors[1].hoverBorder} hover:bg-blue-800">
+			<button on:click={(event) => (searchText = document.getElementById('search-input').value)} class="p-2.5 text-sm font-medium text-white bg-{window.colors.primary200} rounded-r-3xl border bg-{window.colors.primary400} hover:bg-blue-800">
 				<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
 					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
 				</svg>
@@ -113,7 +111,7 @@
 								<Link to="/{value.surah.number}/{value.numberInSurah}">
 									<div class="py-6 space-y-2 border-b dark:border-slate-700">
 										<div>{@html highlightSearchedText(value.text)}</div>
-										<div class="text-{window.websiteColors[1].textNormal}">&mdash; {quranMetaData[value.surah.number].transliteration}, {value.surah.number}:{value.numberInSurah} ({value.edition.name})</div>
+										<div class="text-{window.colors.textNormal}">&mdash; {quranMetaData[value.surah.number].transliteration}, {value.surah.number}:{value.numberInSurah} ({value.edition.name})</div>
 									</div>
 								</Link>
 							{/each}
