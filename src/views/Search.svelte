@@ -53,12 +53,13 @@
 	</div>
 
 	<div class="flex max-w-2xl mx-auto">
-		<div id="dropdown" class="z-10 bg-white divide-y divide-gray-100 rounded-3xl shadow w-44 dark:bg-gray-700">
+		<div id="dropdown" class="z-10 bg-{window.websiteColors[1].backgroundColorMain} divide-y divide-gray-{window.websiteColors[1].textColorMain} rounded-3xl shadow w-44 dark:bg-{window.websiteColors[1].hoverBackgroundColor}">
 			<select
 				id="dropdown"
 				bind:value={selectedTranslation}
 				on:change={(event) => (selectedTranslation = +event.target.value)}
-				class="truncate bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-3xl rounded-r-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+				class="truncate bg-{window.websiteColors[1].hoverBackgroundColor} border bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} text-sm rounded-3xl rounded-r-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-{window.websiteColors[1].hoverBackgroundColor} dark:bg-{window.websiteColors[1]
+					.hoverBorderColor} dark:placeholder-gray-{window.websiteColors[1].textColorMain} dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 			>
 				{#each Object.entries(searchableTranslations) as [id, translation]}
 					<option value={+id}>{translation.language.toUpperCase()} - {translation.name} ({translation.englishName})</option>
@@ -68,9 +69,17 @@
 
 		<div class="flex items-center w-full">
 			<div class="relative w-full">
-				<input type="search" id="search-input" value={searchText} class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 border-s-gray-50 border-s-2 border border-gray-300 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Search Abraham, Mary, Noah, Paradise..." required />
+				<input
+					type="search"
+					id="search-input"
+					value={searchText}
+					class="block p-2.5 w-full z-20 text-sm text-{window.websiteColors[1].textColorMain} bg-{window.websiteColors[1].hoverBackgroundColor} border-s-gray-50 border-s-2 border bg-{window.websiteColors[1].hoverBorderColor} dark:bg-{window.websiteColors[1].hoverBackgroundColor} dark:border-s-gray-{window.websiteColors[1].textColorMain} dark:bg-{window.websiteColors[1]
+						.hoverBorderColor} dark:placeholder-gray-{window.websiteColors[1].textColorMain} dark:text-white dark:focus:border-blue-500"
+					placeholder="Search Abraham, Mary, Noah, Paradise..."
+					required
+				/>
 			</div>
-			<button on:click={(event) => (searchText = document.getElementById('search-input').value)} class="p-2.5 text-sm font-medium text-white bg-gray-500 rounded-r-3xl border border-gray-500 hover:bg-blue-800">
+			<button on:click={(event) => (searchText = document.getElementById('search-input').value)} class="p-2.5 text-sm font-medium text-white bg-{window.websiteColors[1].hoverBackgroundColor} rounded-r-3xl border bg-{window.websiteColors[1].hoverBorderColor} hover:bg-blue-800">
 				<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
 					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
 				</svg>
@@ -104,7 +113,7 @@
 								<Link to="/{value.surah.number}/{value.numberInSurah}">
 									<div class="py-6 space-y-2 border-b dark:border-slate-700">
 										<div>{@html highlightSearchedText(value.text)}</div>
-										<div class="text-gray-500">&mdash; {quranMetaData[value.surah.number].transliteration}, {value.surah.number}:{value.numberInSurah} ({value.edition.name})</div>
+										<div class="text-{window.websiteColors[1].textColorMain}">&mdash; {quranMetaData[value.surah.number].transliteration}, {value.surah.number}:{value.numberInSurah} ({value.edition.name})</div>
 									</div>
 								</Link>
 							{/each}

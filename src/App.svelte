@@ -8,6 +8,8 @@
 	// check and set user settings from URL parameters
 	import '$utils/checkURLParameters';
 
+	import '$data/websiteColors';
+
 	// check for key presses
 	// import "$utils/keyDownHandler";
 

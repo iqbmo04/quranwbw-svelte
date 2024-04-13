@@ -52,16 +52,21 @@
 </script>
 
 <div class={$__currentPage === 'chapter' || $__currentPage === 'page' ? 'block' : 'hidden'}>
-	<div class="{$__bottomNavbarVisible === true ? 'block' : 'hidden'} fixed z-20 w-full h-16 max-w-xs md:max-w-lg shadow-sm -translate-x-1/2 bg-white border border-gray-200 rounded-full bottom-4 left-1/2 theme-grayscale">
+	<div class="{$__bottomNavbarVisible === true ? 'block' : 'hidden'} fixed z-20 w-full h-16 max-w-xs md:max-w-lg shadow-sm -translate-x-1/2 bg-{window.websiteColors[1].backgroundColorMain} border bg-{window.websiteColors[1].hoverBorderColor} rounded-full bottom-4 left-1/2 theme-grayscale">
 		<div class="grid h-full max-w-lg grid-cols-5 mx-auto">
 			<!-- Previous Chapter -->
-			<Link to="/{previousNavigation}" title="Previous Chapter" class="{previousNavigationDisabled === true && disabledElement} inline-flex flex-col items-center justify-center px-5 rounded-s-full hover:bg-gray-200 dark:hover:bg-gray-800 group">
+			<Link to="/{previousNavigation}" title="Previous Chapter" class="{previousNavigationDisabled === true && disabledElement} inline-flex flex-col items-center justify-center px-5 rounded-s-full hover:bg-{window.websiteColors[1].hoverBackgroundColor} dark:hover:bg-{window.websiteColors[1].hoverBackgroundColor} group">
 				<ChevronLeft />
 				<span class="sr-only">Previous Chapter</span>
 			</Link>
 
 			<!-- 2nd icon -->
-			<button type="button" title="Change Display" on:click={() => updateSettings({ type: 'displayType', value: $__displayType === 5 ? 1 : $__displayType + 1 })} class="opacity-70 inline-flex flex-col items-center justify-center px-5 relative inline-flex items-center hover:bg-gray-200 dark:hover:bg-gray-800 group {$__currentPage === 'page' && disabledElement}">
+			<button
+				type="button"
+				title="Change Display"
+				on:click={() => updateSettings({ type: 'displayType', value: $__displayType === 5 ? 1 : $__displayType + 1 })}
+				class="opacity-70 inline-flex flex-col items-center justify-center px-5 relative inline-flex items-center hover:bg-{window.websiteColors[1].hoverBackgroundColor} dark:hover:bg-{window.websiteColors[1].hoverBackgroundColor} group {$__currentPage === 'page' && disabledElement}"
+			>
 				<Eye />
 				<span class="sr-only">Display Type</span>
 			</button>
@@ -69,26 +74,26 @@
 			<!-- 3rd icon -->
 			<!-- play/pause button -->
 			<div class="flex items-center justify-center">
-				<button type="button" title="Play/Pause" on:click={() => audioController()} class="inline-flex flex-col items-center justify-center w-10 h-10 font-medium bg-[#ebebeb] hover:bg-gray-200 rounded-full group focus:ring-2 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
+				<button type="button" title="Play/Pause" on:click={() => audioController()} class="inline-flex flex-col items-center justify-center w-10 h-10 font-medium bg-{window.websiteColors[1].buttonBackgroundColor} hover:bg-{window.websiteColors[1].hoverBackgroundColor} rounded-full group focus:ring-2 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
 					<svelte:component this={$__audioSettings.isPlaying === true ? Pause : PlaySolid} />
 
 					<span class="sr-only">Play/Pause</span>
 
 					<!-- show badge when a verse is playing -->
 					{#if $__audioSettings.isPlaying === true && $__audioSettings.audioType === 'verse'}
-						<div class="absolute inline-flex items-center justify-center z-30 text-xs px-2 text-white bg-gray-500 border-2 border-white rounded-md -top-3 dark:border-gray-900">{$__audioSettings.playingKey}</div>
+						<div class="absolute inline-flex items-center justify-center z-30 text-xs px-2 text-white bg-{window.websiteColors[1].hoverBackgroundColor} border-2 border-white rounded-md -top-3 dark:bg-{window.websiteColors[1].hoverBorderColor}">{$__audioSettings.playingKey}</div>
 					{/if}
 				</button>
 			</div>
 
 			<!-- 4th icon -->
-			<button type="button" title="Settings" data-drawer-target="settings-drawer" data-drawer-show="settings-drawer" data-drawer-placement="right" aria-controls="settings-drawer" class="opacity-70 inline-flex flex-col items-center justify-center px-5 hover:bg-gray-200 dark:hover:bg-gray-800 group">
+			<button type="button" title="Settings" data-drawer-target="settings-drawer" data-drawer-show="settings-drawer" data-drawer-placement="right" aria-controls="settings-drawer" class="opacity-70 inline-flex flex-col items-center justify-center px-5 hover:bg-{window.websiteColors[1].hoverBackgroundColor} dark:hover:bg-{window.websiteColors[1].hoverBackgroundColor} group">
 				<Settings />
 				<span class="sr-only">Settings</span>
 			</button>
 
 			<!-- Next Chapter -->
-			<Link to="/{nextNavigation}" title="Next Chapter" class="{nextNavigationDisabled === true && disabledElement} inline-flex flex-col items-center justify-center px-5 rounded-e-full hover:bg-gray-200 dark:hover:bg-gray-800 group">
+			<Link to="/{nextNavigation}" title="Next Chapter" class="{nextNavigationDisabled === true && disabledElement} inline-flex flex-col items-center justify-center px-5 rounded-e-full hover:bg-{window.websiteColors[1].hoverBackgroundColor} dark:hover:bg-{window.websiteColors[1].hoverBackgroundColor} group">
 				<ChevronRight />
 				<span class="sr-only">Next Chapter</span>
 			</Link>
