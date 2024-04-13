@@ -7,14 +7,15 @@ window.websiteColors = {
 		/* 
       on hovering elements
     */
-		hoverBackgroundColor: '[#ebebeb]',
-		hoverBorderColor: 'gray-600',
+		// hoverBackgroundColor: '[#ebebeb]',
+		// hoverBorderColor: 'gray-300',
 
 		/* 
       button element
     */
 		buttonBackgroundColor: '[#ebebeb]',
-		buttonBackgroundHoverColor: 'gray-400',
+		buttonBackgroundHoverColor: 'gray-200',
+		hoverBorderColor: 'gray-400',
 
 		/*
       homepage chapter cards

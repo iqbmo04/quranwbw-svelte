@@ -53,12 +53,12 @@
 	</div>
 
 	<div class="flex max-w-2xl mx-auto">
-		<div id="dropdown" class="z-10 bg-{window.websiteColors[1].backgroundColorMain} divide-y divide-gray-{window.websiteColors[1].textColorMain} rounded-3xl shadow w-44 dark:bg-{window.websiteColors[1].hoverBackgroundColor}">
+		<div id="dropdown" class="z-10 bg-{window.websiteColors[1].backgroundColorMain} divide-y divide-gray-{window.websiteColors[1].textColorMain} rounded-3xl shadow w-44 dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor}">
 			<select
 				id="dropdown"
 				bind:value={selectedTranslation}
 				on:change={(event) => (selectedTranslation = +event.target.value)}
-				class="truncate bg-{window.websiteColors[1].hoverBackgroundColor} border bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} text-sm rounded-3xl rounded-r-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-{window.websiteColors[1].hoverBackgroundColor} dark:bg-{window.websiteColors[1]
+				class="truncate bg-{window.websiteColors[1].buttonBackgroundHoverColor} border bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} text-sm rounded-3xl rounded-r-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:bg-{window.websiteColors[1]
 					.hoverBorderColor} dark:placeholder-gray-{window.websiteColors[1].textColorMain} dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 			>
 				{#each Object.entries(searchableTranslations) as [id, translation]}
@@ -73,13 +73,13 @@
 					type="search"
 					id="search-input"
 					value={searchText}
-					class="block p-2.5 w-full z-20 text-sm text-{window.websiteColors[1].textColorMain} bg-{window.websiteColors[1].hoverBackgroundColor} border-s-gray-50 border-s-2 border bg-{window.websiteColors[1].hoverBorderColor} dark:bg-{window.websiteColors[1].hoverBackgroundColor} dark:border-s-gray-{window.websiteColors[1].textColorMain} dark:bg-{window.websiteColors[1]
+					class="block p-2.5 w-full z-20 text-sm text-{window.websiteColors[1].textColorMain} bg-{window.websiteColors[1].buttonBackgroundHoverColor} border-s-gray-50 border-s-2 border bg-{window.websiteColors[1].hoverBorderColor} dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:border-s-gray-{window.websiteColors[1].textColorMain} dark:bg-{window.websiteColors[1]
 						.hoverBorderColor} dark:placeholder-gray-{window.websiteColors[1].textColorMain} dark:text-white dark:focus:border-blue-500"
 					placeholder="Search Abraham, Mary, Noah, Paradise..."
 					required
 				/>
 			</div>
-			<button on:click={(event) => (searchText = document.getElementById('search-input').value)} class="p-2.5 text-sm font-medium text-white bg-{window.websiteColors[1].hoverBackgroundColor} rounded-r-3xl border bg-{window.websiteColors[1].hoverBorderColor} hover:bg-blue-800">
+			<button on:click={(event) => (searchText = document.getElementById('search-input').value)} class="p-2.5 text-sm font-medium text-white bg-{window.websiteColors[1].buttonBackgroundHoverColor} rounded-r-3xl border bg-{window.websiteColors[1].hoverBorderColor} hover:bg-blue-800">
 				<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
 					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
 				</svg>

@@ -11,7 +11,7 @@
 	const settingsBlockClasses = 'space-y-2 py-6';
 
 	const selectorClasses =
-		'w-32 border bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].hoverBackgroundColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1].textColorMain} dark:text-slate-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 truncate';
+		'w-32 border bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1].textColorMain} dark:text-slate-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 truncate';
 
 	$: fontSizeCodes = JSON.parse($__userSettings).displaySettings.fontSizes;
 
@@ -20,7 +20,7 @@
 </script>
 
 <!-- drawer component -->
-<div id="settings-drawer" class="fixed top-0 right-0 z-40 h-screen p-4 pt-0 pb-16 overflow-y-auto transition-transform md:rounded-tl-xl md:rounded-bl-xl translate-x-full bg-{window.websiteColors[1].backgroundColorMain} theme-grayscale w-full md:w-1/2 lg:w-[430px] dark:bg-{window.websiteColors[1].hoverBackgroundColor}" tabindex="-1" aria-labelledby="settings-drawer-label">
+<div id="settings-drawer" class="fixed top-0 right-0 z-40 h-screen p-4 pt-0 pb-16 overflow-y-auto transition-transform md:rounded-tl-xl md:rounded-bl-xl translate-x-full bg-{window.websiteColors[1].backgroundColorMain} theme-grayscale w-full md:w-1/2 lg:w-[430px] dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor}" tabindex="-1" aria-labelledby="settings-drawer-label">
 	<div id="settings-head" class="z-30 top-0 sticky bg-{window.websiteColors[1].backgroundColorMain} border-b-2 py-4 mb-4">
 		<h5 id="settings-drawer-label" class="inline-flex items-center mb-4 text-3xl space-x-2 font-semibold text-{window.websiteColors[1].textColorMain} dark:text-{window.websiteColors[1].textColorMain}">
 			<span>Settings</span>
@@ -31,7 +31,7 @@
 			type="button"
 			data-drawer-hide="settings-drawer"
 			aria-controls="settings-drawer"
-			class="text-{window.websiteColors[1].textColorMain} bg-transparent hover:bg-{window.websiteColors[1].buttonBackgroundColor} hover:text-{window.websiteColors[1].textColorMain} rounded-3xl text-sm w-8 h-8 absolute top-4 right-2.5 inline-flex items-center justify-center dark:hover:bg-{window.websiteColors[1].hoverBackgroundColor} dark:hover:text-white"
+			class="text-{window.websiteColors[1].textColorMain} bg-transparent hover:bg-{window.websiteColors[1].buttonBackgroundColor} hover:text-{window.websiteColors[1].textColorMain} rounded-3xl text-sm w-8 h-8 absolute top-4 right-2.5 inline-flex items-center justify-center dark:hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:hover:text-white"
 		>
 			<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
 				<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
@@ -101,8 +101,8 @@
 					<label class="inline-flex items-center cursor-pointer {$__wordTransliterationEnabled === false && disabledElement}">
 						<input type="checkbox" value="" class="sr-only peer" checked={$__wordTranslationEnabled} on:click={(event) => updateSettings({ type: 'wordTranslationEnabled', value: event.target.checked })} />
 						<div
-							class="relative w-14 h-7 bg-{window.websiteColors[1].hoverBackgroundColor} peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-{window.websiteColors[1]
-								.hoverBackgroundColor} peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[4px] after:bg-{window.websiteColors[1].backgroundColorMain} after:bg-{window.websiteColors[1]
+							class="relative w-14 h-7 bg-{window.websiteColors[1].buttonBackgroundHoverColor} peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-{window.websiteColors[1]
+								.buttonBackgroundHoverColor} peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[4px] after:bg-{window.websiteColors[1].backgroundColorMain} after:bg-{window.websiteColors[1]
 								.hoverBorderColor} after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:bg-{window.websiteColors[1].hoverBorderColor} peer-checked:bg-blue-600"
 						></div>
 					</label>
@@ -120,8 +120,8 @@
 					<label class="inline-flex items-center cursor-pointer {$__wordTranslationEnabled === false && disabledElement}">
 						<input type="checkbox" value="" class="sr-only peer" checked={$__wordTransliterationEnabled} on:click={(event) => updateSettings({ type: 'wordTransliterationEnabled', value: event.target.checked })} />
 						<div
-							class="relative w-14 h-7 bg-{window.websiteColors[1].hoverBackgroundColor} peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-{window.websiteColors[1]
-								.hoverBackgroundColor} peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[4px] after:bg-{window.websiteColors[1].backgroundColorMain} after:bg-{window.websiteColors[1]
+							class="relative w-14 h-7 bg-{window.websiteColors[1].buttonBackgroundHoverColor} peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-{window.websiteColors[1]
+								.buttonBackgroundHoverColor} peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[4px] after:bg-{window.websiteColors[1].backgroundColorMain} after:bg-{window.websiteColors[1]
 								.hoverBorderColor} after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:bg-{window.websiteColors[1].hoverBorderColor} peer-checked:bg-blue-600"
 						></div>
 					</label>
@@ -164,8 +164,8 @@
 					<label class="inline-flex items-center cursor-pointer">
 						<input type="checkbox" value="" class="sr-only peer" checked={$__tajweedEnabled} on:click={(event) => updateSettings({ type: 'tajweedEnabled', value: event.target.checked })} />
 						<div
-							class="relative w-14 h-7 bg-{window.websiteColors[1].hoverBackgroundColor} peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-{window.websiteColors[1]
-								.hoverBackgroundColor} peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[4px] after:bg-{window.websiteColors[1].backgroundColorMain} after:bg-{window.websiteColors[1]
+							class="relative w-14 h-7 bg-{window.websiteColors[1].buttonBackgroundHoverColor} peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-{window.websiteColors[1]
+								.buttonBackgroundHoverColor} peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[4px] after:bg-{window.websiteColors[1].backgroundColorMain} after:bg-{window.websiteColors[1]
 								.hoverBorderColor} after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:bg-{window.websiteColors[1].hoverBorderColor} peer-checked:bg-blue-600"
 						></div>
 					</label>
@@ -183,7 +183,7 @@
 						<button
 							type="button"
 							on:click={() => updateSettings({ type: 'arabicText', action: 'increase' })}
-							class="w-16 border px-6 bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-l-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].hoverBackgroundColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1]
+							class="w-16 border px-6 bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-l-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1]
 								.textColorMain} dark:text-slate-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
 						>
 							<svg class="w-3 h-3 text-{window.websiteColors[1].textColorMain} dark:text-slate-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
@@ -193,7 +193,7 @@
 						<button
 							type="button"
 							on:click={() => updateSettings({ type: 'arabicText', action: 'decrease' })}
-							class="w-16 border px-6 text-center bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-r-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].hoverBackgroundColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1]
+							class="w-16 border px-6 text-center bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-r-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1]
 								.textColorMain} dark:text-slate-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
 						>
 							<svg class="w-3 h-3 text-{window.websiteColors[1].textColorMain} dark:text-slate-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
@@ -215,7 +215,7 @@
 						<button
 							type="button"
 							on:click={() => updateSettings({ type: 'wordTranslationText', action: 'increase' })}
-							class="w-16 border px-6 bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-l-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].hoverBackgroundColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1]
+							class="w-16 border px-6 bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-l-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1]
 								.textColorMain} dark:text-slate-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
 						>
 							<svg class="w-3 h-3 text-{window.websiteColors[1].textColorMain} dark:text-slate-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
@@ -225,7 +225,7 @@
 						<button
 							type="button"
 							on:click={() => updateSettings({ type: 'wordTranslationText', action: 'decrease' })}
-							class="w-16 border px-6 text-center bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-r-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].hoverBackgroundColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1]
+							class="w-16 border px-6 text-center bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-r-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1]
 								.textColorMain} dark:text-slate-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
 						>
 							<svg class="w-3 h-3 text-{window.websiteColors[1].textColorMain} dark:text-slate-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
@@ -247,7 +247,7 @@
 						<button
 							type="button"
 							on:click={() => updateSettings({ type: 'verseTranslationText', action: 'increase' })}
-							class="w-16 border px-6 bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-l-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].hoverBackgroundColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1]
+							class="w-16 border px-6 bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-l-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1]
 								.textColorMain} dark:text-slate-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
 						>
 							<svg class="w-3 h-3 text-{window.websiteColors[1].textColorMain} dark:text-slate-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
@@ -257,7 +257,7 @@
 						<button
 							type="button"
 							on:click={() => updateSettings({ type: 'verseTranslationText', action: 'decrease' })}
-							class="w-16 border px-6 text-center bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-r-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].hoverBackgroundColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1]
+							class="w-16 border px-6 text-center bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-r-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1]
 								.textColorMain} dark:text-slate-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
 						>
 							<svg class="w-3 h-3 text-{window.websiteColors[1].textColorMain} dark:text-slate-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
@@ -298,7 +298,7 @@
 					<button
 						id="dropdownCheckboxButton"
 						data-dropdown-toggle="verse-translation-checkbox"
-						class="w-32 border text-left bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].hoverBackgroundColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1]
+						class="w-32 border text-left bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1]
 							.textColorMain} dark:text-slate-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
 						type="button"
 					>
@@ -325,16 +325,16 @@
 															on:click={() => updateSettings({ type: 'verseTranslation', value: translation.id })}
 															checked
 															type="checkbox"
-															class="w-4 h-4 text-blue-600 bg-{window.websiteColors[1].hoverBackgroundColor} bg-{window.websiteColors[1].hoverBorderColor} rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-{window.websiteColors[1].textColorMain} dark:focus:ring-offset-gray-{window.websiteColors[1].textColorMain} focus:ring-2 dark:bg-{window.websiteColors[1]
-																.hoverBackgroundColor} dark:border-slate-700"
+															class="w-4 h-4 text-blue-600 bg-{window.websiteColors[1].buttonBackgroundHoverColor} bg-{window.websiteColors[1].hoverBorderColor} rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-{window.websiteColors[1].textColorMain} dark:focus:ring-offset-gray-{window.websiteColors[1].textColorMain} focus:ring-2 dark:bg-{window.websiteColors[1]
+																.buttonBackgroundHoverColor} dark:border-slate-700"
 														/>
 													{:else}
 														<input
 															id="verseTranslationCheckbox-{translation.id}"
 															on:click={() => updateSettings({ type: 'verseTranslation', value: translation.id })}
 															type="checkbox"
-															class="w-4 h-4 text-blue-600 bg-{window.websiteColors[1].hoverBackgroundColor} bg-{window.websiteColors[1].hoverBorderColor} rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-{window.websiteColors[1].textColorMain} dark:focus:ring-offset-gray-{window.websiteColors[1].textColorMain} focus:ring-2 dark:bg-{window.websiteColors[1]
-																.hoverBackgroundColor} dark:border-slate-700"
+															class="w-4 h-4 text-blue-600 bg-{window.websiteColors[1].buttonBackgroundHoverColor} bg-{window.websiteColors[1].hoverBorderColor} rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-{window.websiteColors[1].textColorMain} dark:focus:ring-offset-gray-{window.websiteColors[1].textColorMain} focus:ring-2 dark:bg-{window.websiteColors[1]
+																.buttonBackgroundHoverColor} dark:border-slate-700"
 														/>
 													{/if}
 													<label for="verseTranslationCheckbox-{translation.id}" class="ml-2 text-sm text-{window.websiteColors[1].textColorMain} dark:text-{window.websiteColors[1].textColorMain}">{translation.author}</label>

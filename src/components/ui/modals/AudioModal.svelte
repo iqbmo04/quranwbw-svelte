@@ -20,7 +20,7 @@
 			<button
 				type="button"
 				on:click={() => toggleModal('audio-modal', 'hide')}
-				class="absolute top-3 right-2.5 text-{window.websiteColors[1].textColorMain} bg-transparent hover:bg-{window.websiteColors[1].buttonBackgroundColor} hover:text-{window.websiteColors[1].textColorMain} rounded-3xl text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-{window.websiteColors[1].hoverBackgroundColor} dark:hover:text-white"
+				class="absolute top-3 right-2.5 text-{window.websiteColors[1].textColorMain} bg-transparent hover:bg-{window.websiteColors[1].buttonBackgroundColor} hover:text-{window.websiteColors[1].textColorMain} rounded-3xl text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:hover:text-white"
 				data-modal-hide="audio-modal"
 			>
 				<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -44,8 +44,8 @@
 									value=""
 									on:click={updateAudioSettings}
 									name="radio-audio-type"
-									class="radio-play-type w-4 h-4 text-{window.websiteColors[1].textColorMain} bg-{window.websiteColors[1].hoverBackgroundColor} bg-{window.websiteColors[1].hoverBorderColor} focus:ring-gray-{window.websiteColors[1].textColorMain} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.websiteColors[1].textColorMain} focus:ring-2 dark:bg-{window.websiteColors[1]
-										.hoverBackgroundColor} dark:border-slate-700"
+									class="radio-play-type w-4 h-4 text-{window.websiteColors[1].textColorMain} bg-{window.websiteColors[1].buttonBackgroundHoverColor} bg-{window.websiteColors[1].hoverBorderColor} focus:ring-gray-{window.websiteColors[1].textColorMain} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.websiteColors[1].textColorMain} focus:ring-2 dark:bg-{window.websiteColors[1]
+										.buttonBackgroundHoverColor} dark:border-slate-700"
 								/>
 								<label for="playVerse" class="ml-2 text-sm font-medium text-{window.websiteColors[1].textColorMain} dark:text-{window.websiteColors[1].textColorMain}">Play Verse</label>
 							</div>
@@ -58,8 +58,8 @@
 									value=""
 									on:click={updateAudioSettings}
 									name="radio-audio-type"
-									class="radio-play-type w-4 h-4 text-{window.websiteColors[1].textColorMain} bg-{window.websiteColors[1].hoverBackgroundColor} bg-{window.websiteColors[1].hoverBorderColor} focus:ring-gray-{window.websiteColors[1].textColorMain} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.websiteColors[1].textColorMain} focus:ring-2 dark:bg-{window.websiteColors[1]
-										.hoverBackgroundColor} dark:border-slate-700"
+									class="radio-play-type w-4 h-4 text-{window.websiteColors[1].textColorMain} bg-{window.websiteColors[1].buttonBackgroundHoverColor} bg-{window.websiteColors[1].hoverBorderColor} focus:ring-gray-{window.websiteColors[1].textColorMain} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.websiteColors[1].textColorMain} focus:ring-2 dark:bg-{window.websiteColors[1]
+										.buttonBackgroundHoverColor} dark:border-slate-700"
 								/>
 								<label for="playWord" class="ml-2 text-sm font-medium text-{window.websiteColors[1].textColorMain} dark:text-{window.websiteColors[1].textColorMain}">Play Words</label>
 							</div>
@@ -86,8 +86,8 @@
 									value=""
 									on:click={updateAudioSettings}
 									name="audioRange-radios"
-									class=" w-4 h-4 text-{window.websiteColors[1].textColorMain} bg-{window.websiteColors[1].hoverBackgroundColor} bg-{window.websiteColors[1].hoverBorderColor} focus:ring-gray-{window.websiteColors[1].textColorMain} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.websiteColors[1].textColorMain} focus:ring-2 dark:bg-{window.websiteColors[1]
-										.hoverBackgroundColor} dark:border-slate-700"
+									class=" w-4 h-4 text-{window.websiteColors[1].textColorMain} bg-{window.websiteColors[1].buttonBackgroundHoverColor} bg-{window.websiteColors[1].hoverBorderColor} focus:ring-gray-{window.websiteColors[1].textColorMain} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.websiteColors[1].textColorMain} focus:ring-2 dark:bg-{window.websiteColors[1]
+										.buttonBackgroundHoverColor} dark:border-slate-700"
 								/>
 								<label for="playThisVerse" class="ml-2 text-sm font-medium text-{window.websiteColors[1].textColorMain} dark:text-{window.websiteColors[1].textColorMain}">This Verse</label>
 							</div>
@@ -100,8 +100,8 @@
 									value=""
 									on:click={updateAudioSettings}
 									name="audioRange-radios"
-									class=" w-4 h-4 text-{window.websiteColors[1].textColorMain} bg-{window.websiteColors[1].hoverBackgroundColor} bg-{window.websiteColors[1].hoverBorderColor} focus:ring-gray-{window.websiteColors[1].textColorMain} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.websiteColors[1].textColorMain} focus:ring-2 dark:bg-{window.websiteColors[1]
-										.hoverBackgroundColor} dark:border-slate-700"
+									class=" w-4 h-4 text-{window.websiteColors[1].textColorMain} bg-{window.websiteColors[1].buttonBackgroundHoverColor} bg-{window.websiteColors[1].hoverBorderColor} focus:ring-gray-{window.websiteColors[1].textColorMain} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.websiteColors[1].textColorMain} focus:ring-2 dark:bg-{window.websiteColors[1]
+										.buttonBackgroundHoverColor} dark:border-slate-700"
 								/>
 								<label for="playFromHere" class="ml-2 text-sm font-medium text-{window.websiteColors[1].textColorMain} dark:text-{window.websiteColors[1].textColorMain}">From Here</label>
 							</div>
@@ -114,8 +114,8 @@
 									value=""
 									on:click={updateAudioSettings}
 									name="audioRange-radios"
-									class=" w-4 h-4 text-{window.websiteColors[1].textColorMain} bg-{window.websiteColors[1].hoverBackgroundColor} bg-{window.websiteColors[1].hoverBorderColor} focus:ring-gray-{window.websiteColors[1].textColorMain} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.websiteColors[1].textColorMain} focus:ring-2 dark:bg-{window.websiteColors[1]
-										.hoverBackgroundColor} dark:border-slate-700"
+									class=" w-4 h-4 text-{window.websiteColors[1].textColorMain} bg-{window.websiteColors[1].buttonBackgroundHoverColor} bg-{window.websiteColors[1].hoverBorderColor} focus:ring-gray-{window.websiteColors[1].textColorMain} dark:focus:ring-blue-600 dark:ring-offset-gray-{window.websiteColors[1].textColorMain} focus:ring-2 dark:bg-{window.websiteColors[1]
+										.buttonBackgroundHoverColor} dark:border-slate-700"
 								/>
 								<label for="playRange" class="ml-2 text-sm font-medium text-{window.websiteColors[1].textColorMain} dark:text-{window.websiteColors[1].textColorMain}">Verses Range</label>
 							</div>
@@ -139,7 +139,7 @@
 											id="startVerse"
 											on:change={updateAudioSettings}
 											aria-describedby="helper-text-explanation"
-											class="w-16 text-xs border bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-3xl focus:ring-gray-{window.websiteColors[1].textColorMain} focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].hoverBackgroundColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1].textColorMain} gray-{window
+											class="w-16 text-xs border bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-3xl focus:ring-gray-{window.websiteColors[1].textColorMain} focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1].textColorMain} gray-{window
 												.websiteColors[1].textColorMain}t-slate-400 dark:focus:ring-gray-{window.websiteColors[1].textColorMain} dark:focus:border-blue-500"
 											placeholder="start"
 										/>
@@ -154,7 +154,7 @@
 											id="endVerse"
 											on:change={updateAudioSettings}
 											aria-describedby="helper-text-explanation"
-											class="w-16 text-xs border bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-3xl focus:ring-gray-{window.websiteColors[1].textColorMain} focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].hoverBackgroundColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1].textColorMain} gray-{window
+											class="w-16 text-xs border bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-3xl focus:ring-gray-{window.websiteColors[1].textColorMain} focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1].textColorMain} gray-{window
 												.websiteColors[1].textColorMain}t-slate-400 dark:focus:ring-gray-{window.websiteColors[1].textColorMain} dark:focus:border-blue-500"
 											placeholder="end"
 										/>
@@ -178,7 +178,7 @@
 								min="1"
 								max="20"
 								on:change={updateAudioSettings}
-								class="w-16 text-xs border bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-3xl focus:ring-gray-{window.websiteColors[1].textColorMain} focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].hoverBackgroundColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1].textColorMain} gray-{window
+								class="w-16 text-xs border bg-{window.websiteColors[1].hoverBorderColor} text-{window.websiteColors[1].textColorMain} rounded-3xl focus:ring-gray-{window.websiteColors[1].textColorMain} focus:border-blue-500 block p-2.5 dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:border-slate-700 dark:placeholder-gray-{window.websiteColors[1].textColorMain} gray-{window
 									.websiteColors[1].textColorMain}t-slate-400 dark:focus:ring-gray-{window.websiteColors[1].textColorMain} dark:focus:border-blue-500"
 							/>
 							<span class="m-auto text-sm font-medium text-{window.websiteColors[1].textColorMain} dark:text-{window.websiteColors[1].textColorMain}">{$__audioSettings.timesToRepeat < 2 ? 'time' : 'times'} </span>

@@ -9,7 +9,7 @@
 <div id="tajweed-rules-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
 	<div class="relative w-full max-w-2xl max-h-full sm:mx-auto h-[calc(100%-3.5rem)] min-h-[calc(100%-3.5rem)] flex items-center">
 		<!-- Modal content -->
-		<div class="max-h-full overflow-hidden flex flex-col bg-{window.websiteColors[1].backgroundColorMain} rounded-3xl shadow dark:bg-{window.websiteColors[1].hoverBackgroundColor}">
+		<div class="max-h-full overflow-hidden flex flex-col bg-{window.websiteColors[1].backgroundColorMain} rounded-3xl shadow dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor}">
 			<!-- Modal header -->
 			<div class="flex items-start justify-between p-4 border-b rounded-t dark:bg-{window.websiteColors[1].hoverBorderColor}">
 				<h3 class="text-xl font-semibold text-{window.websiteColors[1].textColorMain} theme-grayscale">Tajweed Rules</h3>
@@ -26,7 +26,7 @@
 
 				<div>
 					<table class="w-full text-sm text-left rtl:text-right text-{window.websiteColors[1].textColorMain} dark:text-{window.websiteColors[1].textColorMain}">
-						<thead class="text-xs text-{window.websiteColors[1].textColorMain} uppercase bg-{window.websiteColors[1].hoverBackgroundColor} theme-grayscale">
+						<thead class="text-xs text-{window.websiteColors[1].textColorMain} uppercase bg-{window.websiteColors[1].buttonBackgroundHoverColor} theme-grayscale">
 							<tr>
 								<th scope="col" class="px-6 py-3"> Rule/Icon </th>
 								<th scope="col" class="px-6 py-3"> Description </th>
@@ -34,7 +34,7 @@
 						</thead>
 						<tbody>
 							{#each Object.entries(tajweedRulings) as [id, ruling]}
-								<tr class="bg-{window.websiteColors[1].backgroundColorMain} border-b dark:bg-{window.websiteColors[1].hoverBackgroundColor} dark:bg-{window.websiteColors[1].hoverBorderColor} hover:bg-{window.websiteColors[1].hoverBackgroundColor} dark:hover:bg-{window.websiteColors[1].hoverBackgroundColor}">
+								<tr class="bg-{window.websiteColors[1].backgroundColorMain} border-b dark:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:bg-{window.websiteColors[1].hoverBorderColor} hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor} dark:hover:bg-{window.websiteColors[1].buttonBackgroundHoverColor}">
 									<td class="px-6 py-4 tajweed-rules text-2xl theme-palette-tajweed font-filter"> {ruling.code} </td>
 									<td class="px-6 py-4 theme-grayscale"> {ruling.description} </td>
 								</tr>
