@@ -52,7 +52,7 @@
 </script>
 
 <div class={$__currentPage === 'chapter' || $__currentPage === 'page' ? 'block' : 'hidden'}>
-	<div class="{$__bottomNavbarVisible === true ? 'block' : 'hidden'} fixed z-20 w-full h-16 max-w-xs md:max-w-lg shadow-sm -translate-x-1/2 bg-{window.colors.backgroundMain} border bg-{window.colors.primary400} text-{window.colors.primary500} rounded-full bottom-4 left-1/2">
+	<div class="{$__bottomNavbarVisible === true ? 'block' : 'hidden'} fixed z-20 w-full h-16 max-w-xs md:max-w-lg shadow-sm -translate-x-1/2 bg-{window.colors.backgroundMain} border text-{window.colors.primary500} rounded-full bottom-4 left-1/2">
 		<div class="grid h-full max-w-lg grid-cols-5 mx-auto">
 			<!-- Previous Chapter -->
 			<Link to="/{previousNavigation}" title="Previous Chapter" class="{previousNavigationDisabled === true && disabledElement} inline-flex flex-col items-center justify-center px-5 rounded-s-full hover:bg-{window.colors.primary150} group">
@@ -76,7 +76,7 @@
 
 					<!-- show badge when a verse is playing -->
 					{#if $__audioSettings.isPlaying === true && $__audioSettings.audioType === 'verse'}
-						<div class="absolute inline-flex items-center justify-center z-30 text-xs px-2 text-white bg-{window.colors.primary200} border-2 border-white rounded-md -top-3 dark:bg-{window.colors.primary400}">{$__audioSettings.playingKey}</div>
+						<div class="absolute inline-flex items-center justify-center z-30 text-xs px-2 text-white bg-{window.colors.primary200} border-2 border-white rounded-md -top-3">{$__audioSettings.playingKey}</div>
 					{/if}
 				</button>
 			</div>

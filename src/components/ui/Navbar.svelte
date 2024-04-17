@@ -74,7 +74,7 @@
 	}
 </script>
 
-<nav id="navbar" class="{$__currentPage === 'home' ? 'hidden' : 'block'} bg-{window.colors.backgroundMain} fixed w-full z-20 top-0 left-0 border-b text-black print:hidden">
+<nav id="navbar" class="{$__currentPage === 'home' ? 'hidden' : 'block'} bg-{window.colors.backgroundMain} text-{window.colors.textNormal} fixed w-full z-20 top-0 left-0 border-b print:hidden">
 	<div id="top-nav" class="{$__topNavbarVisible === true ? 'block' : 'hidden'} flex flex-row items-center justify-between max-w-screen-lg mx-auto px-4 py-2">
 		<Link to="/" class="flex flex-row items-center p-3 cursor-pointer md:bg-transparent hover:bg-{window.colors.primary150} rounded-3xl">
 			<Home />
@@ -125,7 +125,7 @@
 			</div>
 		</div>
 
-		<div id="chapter-progress-bar" class="fixed inset-x-0 z-20 h-1 bg-{window.colors.primary200} transition-width transition-slowest ease dark:bg-slate-700" style="width: {chapterProgress}%" />
+		<div id="chapter-progress-bar" class="fixed inset-x-0 z-20 h-1 bg-{window.colors.primary200} transition-width transition-slowest ease" style="width: {chapterProgress}%" />
 	{/if}
 
 	<!-- mini nav for mushaf page -->
@@ -137,8 +137,8 @@
 	{/if}
 
 	<!-- navigation list -->
-	<div id="navigationDropdown" class="navbar-dropdown z-30 mt-1 border bg-{window.colors.primary400} rounded-3xl shadow-sm bg-{window.colors.backgroundMain} border-y shadow-lg hidden dark:bg-slate-800 dark:text-slate-400">
-		<div class="flex flex-row space-x-4 justify-between max-h-80 max-w-screen-lg px-4 py-5 mx-auto text-{window.colors.textNormal} dark:text-slate-400 md:px-2">
+	<div id="navigationDropdown" class="navbar-dropdown z-30 mt-1 border rounded-3xl shadow-sm bg-{window.colors.backgroundMain} border-y shadow-lg hidden">
+		<div class="flex flex-row space-x-4 justify-between max-h-80 max-w-screen-lg px-4 py-5 mx-auto text-{window.colors.textNormal} md:px-2">
 			<!-- chapter selector -->
 			<div class="flex flex-col space-y-2">
 				<div class="mx-4 text-xs pb-2 border-b">Chapters</div>

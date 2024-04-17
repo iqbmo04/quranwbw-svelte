@@ -47,7 +47,7 @@
 </script>
 
 <Router>
-	<div class="bg-{window.colors.websiteBackground} h-full p-2">
+	<div class="bg-{window.colors.websiteBackground} text-{window.colors.textNormal} h-full p-2">
 		<div class="max-w-screen-lg mx-auto pt-16 pb-24 select-none {paddingX}">
 			<!-- include the UI elements -->
 			<Navbar />
