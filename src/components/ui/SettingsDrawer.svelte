@@ -180,12 +180,12 @@
 					<span class="block text-{window.colors.textNormal}">Arabic Word Size ({fontSizeCodes.arabicText.split('-')[1]})</span>
 					<div class="inline-flex rounded-md shadow-sm" role="group">
 						<button type="button" on:click={() => updateSettings({ type: 'arabicText', action: 'increase' })} class="w-16 border px-6 bg-{window.colors.primary150} text-{window.colors.textNormal} rounded-l-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.colors.primary200} dark:border-slate-700 dark:placeholder-gray-{window.colors.textNormal}">
-							<svg class="w-3 h-3 text-{window.colors.textNormal}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+							<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
 								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
 							</svg>
 						</button>
 						<button type="button" on:click={() => updateSettings({ type: 'arabicText', action: 'decrease' })} class="w-16 border px-6 text-center bg-{window.colors.primary150} text-{window.colors.textNormal} rounded-r-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.colors.primary200} dark:border-slate-700 dark:placeholder-gray-{window.colors.textNormal}">
-							<svg class="w-3 h-3 text-{window.colors.textNormal}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+							<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
 								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
 							</svg>
 						</button>
@@ -202,12 +202,12 @@
 					<span class="block text-{window.colors.textNormal}">Word Tr/Tl Size ({fontSizeCodes.wordTranslationText.split('-')[1]})</span>
 					<div class="inline-flex rounded-md shadow-sm" role="group">
 						<button type="button" on:click={() => updateSettings({ type: 'wordTranslationText', action: 'increase' })} class="w-16 border px-6 bg-{window.colors.primary150} text-{window.colors.textNormal} rounded-l-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.colors.primary200} dark:border-slate-700 dark:placeholder-gray-{window.colors.textNormal}">
-							<svg class="w-3 h-3 text-{window.colors.textNormal}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+							<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
 								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
 							</svg>
 						</button>
 						<button type="button" on:click={() => updateSettings({ type: 'wordTranslationText', action: 'decrease' })} class="w-16 border px-6 text-center bg-{window.colors.primary150} text-{window.colors.textNormal} rounded-r-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.colors.primary200} dark:border-slate-700 dark:placeholder-gray-{window.colors.textNormal}">
-							<svg class="w-3 h-3 text-{window.colors.textNormal}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+							<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
 								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
 							</svg>
 						</button>
@@ -224,12 +224,12 @@
 					<span class="block text-{window.colors.textNormal}">Verse Tr/Tl Size ({fontSizeCodes.verseTranslationText.split('-')[1]})</span>
 					<div class="inline-flex rounded-md shadow-sm" role="group">
 						<button type="button" on:click={() => updateSettings({ type: 'verseTranslationText', action: 'increase' })} class="w-16 border px-6 bg-{window.colors.primary150} text-{window.colors.textNormal} rounded-l-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.colors.primary200} dark:border-slate-700 dark:placeholder-gray-{window.colors.textNormal}">
-							<svg class="w-3 h-3 text-{window.colors.textNormal}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+							<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
 								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
 							</svg>
 						</button>
 						<button type="button" on:click={() => updateSettings({ type: 'verseTranslationText', action: 'decrease' })} class="w-16 border px-6 text-center bg-{window.colors.primary150} text-{window.colors.textNormal} rounded-r-3xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-{window.colors.primary200} dark:border-slate-700 dark:placeholder-gray-{window.colors.textNormal}">
-							<svg class="w-3 h-3 text-{window.colors.textNormal}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+							<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
 								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
 							</svg>
 						</button>

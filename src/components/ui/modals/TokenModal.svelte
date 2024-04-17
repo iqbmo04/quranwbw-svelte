@@ -1,5 +1,5 @@
 <script>
-	import { buttonElement, disabledElement } from '$data/commonStyles';
+	import { buttonElement, disabledElement, inputElement } from '$data/commonStyles';
 	import { toggleModal } from '$utils/toggleModal';
 	import { __userToken, __userSettings } from '$utils/stores';
 	import { downloadTextFile } from '$utils/downloadTextFile';
@@ -304,7 +304,7 @@
 				<!-- I already have a token -->
 				{#if tokenTab === 1 && $__userToken === null}
 					<div id="already-have-a-token" class="flex flex-col space-y-4 justify-center">
-						<input id="token-value" type="text" class="rounded-md w-full text-center text-xs" placeholder="Enter your token here..." />
+						<input id="token-value" type="text" class="rounded-md w-full text-center text-xs {inputElement}" placeholder="Enter your token here..." />
 						<button id="validate-token" on:click={() => validateToken()} class="w-full {buttonElement} {tokenValidationInProcess === true && disabledElement}">
 							<span>{tokenValidationInProcess === false ? 'Validate Token' : 'Validating token...'}</span>
 						</button>
@@ -325,7 +325,7 @@
 				<!-- email token -->
 				{#if tokenTab === 3 && $__userToken !== null && tokenEmailed === false}
 					<div id="email-token" class="flex flex-col space-y-2 justify-center">
-						<input id="user-email" type="email" class="rounded-md w-full text-center text-xs" placeholder="email@example.com" />
+						<input id="user-email" type="email" class="rounded-md w-full text-center text-xs {inputElement}" placeholder="email@example.com" />
 						<button id="email-button" on:click={() => emailToken()} class="w-full {buttonElement} {tokenEmailInProcess === true && disabledElement}">
 							<Email />
 							<span> {tokenEmailInProcess === false ? 'Email Token' : 'Emailing...'} </span>
@@ -338,7 +338,7 @@
 					<div id="token-cloud-buttons" class="{tokenCloudButtonsVisible === true ? 'block' : 'hidden'} flex flex-col space-y-6">
 						<!-- input box and download button -->
 						<div class="flex flex-row space-x-2">
-							<input id="token-value" type="text" on:click={() => copyToken()} value={$__userToken} class="rounded-md w-full text-center text-xs cursor-pointer" readonly="readonly" />
+							<input id="token-value" type="text" on:click={() => copyToken()} value={$__userToken} class="rounded-md w-full text-center text-xs cursor-pointer {inputElement}" readonly="readonly" />
 
 							<!-- if browser supports web share api, show share button, else show download button -->
 							{#if navigator.share}
@@ -374,7 +374,7 @@
 							</div>
 
 							<!-- delete token button -->
-							<button id="delete-token" on:click={() => deleteToken()} class="w-full bg-{window.colors.primary150} text-white hover:bg-{window.colors.primary150} {buttonElement}">
+							<button id="delete-token" on:click={() => deleteToken()} class="w-full {buttonElement}">
 								<span>Delete Token</span>
 							</button>
 						</div>

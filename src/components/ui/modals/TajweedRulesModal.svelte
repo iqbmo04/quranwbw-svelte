@@ -44,7 +44,7 @@
 				</div>
 			</div>
 			<!-- Modal footer -->
-			<div class="flex justify-end p-6 space-x-2 border-t bg-{window.colors.primary400} rounded-b dark:bg-{window.colors.primary400}">
+			<div class="flex justify-end p-6 space-x-2 border-t rounded-b">
 				<button on:click={() => toggleModal('tajweed-rules-modal', 'hide')} type="button" class={buttonElement}>Close</button>
 			</div>
 		</div>

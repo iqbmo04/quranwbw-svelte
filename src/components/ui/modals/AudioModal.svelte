@@ -3,7 +3,7 @@
 	import { __currentPage, __chapterNumber, __audioSettings } from '$utils/stores';
 	import { initializeAudio, updateAudioSettings } from '$utils/audioController';
 	import { toggleModal } from '$utils/toggleModal';
-	import { disabledElement, buttonElement } from '$data/commonStyles';
+	import { disabledElement, buttonElement, inputElement } from '$data/commonStyles';
 
 	// icons
 	// import Info from "$svgs/Info.svelte";
@@ -32,12 +32,12 @@
 						<div class="flex flex-row space-x-4">
 							<!-- play verse -->
 							<div class="flex items-center">
-								<input checked={$__audioSettings.audioType === 'verse' ? true : false} id="playVerse" type="radio" value="" on:click={updateAudioSettings} name="radio-audio-type" class="radio-play-type w-4 h-4 text-{window.colors.textNormal} bg-{window.colors.primary150} bg-{window.colors.primary400} focus:ring-gray-{window.colors.textNormal} focus:ring-2" />
+								<input checked={$__audioSettings.audioType === 'verse' ? true : false} id="playVerse" type="radio" value="" on:click={updateAudioSettings} name="radio-audio-type" class="radio-play-type w-4 h-4 bg-{window.colors.primary150} focus:ring-gray-{window.colors.textNormal} focus:ring-2" />
 								<label for="playVerse" class="ml-2 text-sm font-medium text-{window.colors.textNormal}">Play Verse</label>
 							</div>
 							<!-- play word -->
 							<div class="flex items-center">
-								<input checked={$__audioSettings.audioType === 'word' ? true : false} id="playWord" type="radio" value="" on:click={updateAudioSettings} name="radio-audio-type" class="radio-play-type w-4 h-4 text-{window.colors.textNormal} bg-{window.colors.primary150} bg-{window.colors.primary400} focus:ring-gray-{window.colors.textNormal} focus:ring-2" />
+								<input checked={$__audioSettings.audioType === 'word' ? true : false} id="playWord" type="radio" value="" on:click={updateAudioSettings} name="radio-audio-type" class="radio-play-type w-4 h-4 bg-{window.colors.primary150} focus:ring-gray-{window.colors.textNormal} focus:ring-2" />
 								<label for="playWord" class="ml-2 text-sm font-medium text-{window.colors.textNormal}">Play Words</label>
 							</div>
 						</div>
@@ -56,17 +56,17 @@
 						<div class="flex flex-row space-x-4">
 							<!-- play this verse -->
 							<div class="flex items-center">
-								<input checked={$__audioSettings.audioRange === 'playThisVerse' ? true : false} id="playThisVerse" type="radio" value="" on:click={updateAudioSettings} name="audioRange-radios" class=" w-4 h-4 text-{window.colors.textNormal} bg-{window.colors.primary150} bg-{window.colors.primary400} focus:ring-gray-{window.colors.textNormal} focus:ring-2" />
+								<input checked={$__audioSettings.audioRange === 'playThisVerse' ? true : false} id="playThisVerse" type="radio" value="" on:click={updateAudioSettings} name="audioRange-radios" class=" w-4 h-4 bg-{window.colors.primary150} focus:ring-gray-{window.colors.textNormal} focus:ring-2" />
 								<label for="playThisVerse" class="ml-2 text-sm font-medium text-{window.colors.textNormal}">This Verse</label>
 							</div>
 							<!-- play from here -->
 							<div class="flex items-center {$__currentPage !== 'chapter' && disabledElement}">
-								<input checked={$__audioSettings.audioRange === 'playFromHere' ? true : false} id="playFromHere" type="radio" value="" on:click={updateAudioSettings} name="audioRange-radios" class=" w-4 h-4 text-{window.colors.textNormal} bg-{window.colors.primary150} bg-{window.colors.primary400} focus:ring-gray-{window.colors.textNormal} focus:ring-2" />
+								<input checked={$__audioSettings.audioRange === 'playFromHere' ? true : false} id="playFromHere" type="radio" value="" on:click={updateAudioSettings} name="audioRange-radios" class=" w-4 h-4 bg-{window.colors.primary150} focus:ring-gray-{window.colors.textNormal} focus:ring-2" />
 								<label for="playFromHere" class="ml-2 text-sm font-medium text-{window.colors.textNormal}">From Here</label>
 							</div>
 							<!-- play range -->
 							<div class="flex items-center {$__currentPage !== 'chapter' && disabledElement}">
-								<input checked={$__audioSettings.audioRange === 'playRange' ? true : false} id="playRange" type="radio" value="" on:click={updateAudioSettings} name="audioRange-radios" class=" w-4 h-4 text-{window.colors.textNormal} bg-{window.colors.primary150} bg-{window.colors.primary400} focus:ring-gray-{window.colors.textNormal} focus:ring-2" />
+								<input checked={$__audioSettings.audioRange === 'playRange' ? true : false} id="playRange" type="radio" value="" on:click={updateAudioSettings} name="audioRange-radios" class=" w-4 h-4 bg-{window.colors.primary150} focus:ring-gray-{window.colors.textNormal} focus:ring-2" />
 								<label for="playRange" class="ml-2 text-sm font-medium text-{window.colors.textNormal}">Verses Range</label>
 							</div>
 						</div>
@@ -119,7 +119,7 @@
 					<div class="flex flex-row space-x-4">
 						<div class="flex flex-row space-x-2">
 							<span class="m-auto text-sm font-medium text-{window.colors.textNormal}">Repeat each {$__audioSettings.audioType} </span>
-							<input id="timesToRepeat" type="number" value="1" min="1" max="20" on:change={updateAudioSettings} class="w-16 text-xs bg-{window.colors.primary150} text-{window.colors.textNormal} border border-{window.colors.primary200} rounded-3xl focus:ring-gray-{window.colors.textNormal} focus:border-blue-500 block p-2.5" />
+							<input id="timesToRepeat" type="number" value="1" min="1" max="20" on:change={updateAudioSettings} class="w-16 text-xs block p-2.5 {inputElement}" />
 							<span class="m-auto text-sm font-medium text-{window.colors.textNormal}">{$__audioSettings.timesToRepeat < 2 ? 'time' : 'times'} </span>
 						</div>
 					</div>

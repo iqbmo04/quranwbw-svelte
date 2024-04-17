@@ -3,7 +3,7 @@
 	import { quranMetaData, pageNumberKeys } from '$data/quranMeta';
 	import { __chapterNumber, __currentPage, __lastRead, __pageURL, __topNavbarVisible, __pageNumber, __morphologyKey, __mushafPageDivisions } from '$utils/stores';
 	import { toggleModal } from '$utils/toggleModal';
-	import { disabledElement, buttonElement } from '$data/commonStyles';
+	import { disabledElement, buttonElement, inputElement } from '$data/commonStyles';
 
 	// icons
 	import Menu from '$svgs/Menu.svelte';
@@ -13,7 +13,7 @@
 
 	// classes
 	const rightMenuDropdownClasses = `block w-full text-left px-4 py-2 hover:bg-${window.colors.primary150}`;
-	const navigationInputClasses = `bg-${window.colors.primary150} text-${window.colors.textNormal} border border-${window.colors.primary200} text-sm rounded-3xl focus:ring-blue-500 focus:border-blue-500 block w-24 p-2.5`;
+	const navigationInputClasses = `text-sm block w-24 p-2.5 ${inputElement}`;
 
 	let gotoVerse = 1,
 		gotoPageChapter = 1,
